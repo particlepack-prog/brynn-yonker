@@ -491,3 +491,29 @@ a.ig-promo:hover img{transform:scale(1.04)}
 .noaa-hero{min-height:clamp(340px,28vw,400px)}
 .noaa-hero img{object-position:72% 64%}
 .scout-page{padding-top:2.5rem}
+
+/* Sound Scout clips use pre-cropped local thumbnails, so no zoom is needed. */
+.ig-tile:hover .ig-img{transform:scale(1.04)}
+.ig-title{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+/* Long lists open with a few rows; "Show all" reveals the rest. */
+.ig-grid.is-collapsed>.ig-tile:nth-child(n+13),.ss-grid.is-collapsed>.ss-card:nth-child(n+7){display:none}
+.more-row{display:flex;justify-content:center;margin-top:1.25rem}
+.more-btn{font-family:var(--sans);font-size:.82rem;font-weight:700;color:var(--brown);background:#fff;border:1.5px solid var(--cream2);padding:.7rem 1.6rem;border-radius:50px;cursor:pointer;transition:border-color .2s,color .2s}
+.more-btn:hover{border-color:var(--orange);color:var(--orange)}
+.more-btn:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+
+/* ═══ LONG-FORM SOUNDSCAPES ═══ */
+.ss-head{margin:4.5rem 0 1.5rem;max-width:62ch}
+.ss-head h2{margin-bottom:.5rem}
+.ss-head p{font-size:.93rem;color:var(--muted);line-height:1.8}
+.ss-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem 1.25rem}
+.ss-card{display:flex;flex-direction:column;gap:.65rem;text-decoration:none;color:var(--brown)}
+.ss-thumb{position:relative;display:block;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:var(--brown)}
+.ss-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.ss-card:hover .ss-thumb img{transform:scale(1.04)}
+.ss-dur{position:absolute;right:.5rem;bottom:.5rem;background:rgba(0,0,0,.75);color:#fff;font-size:.7rem;font-weight:700;padding:.15rem .45rem;border-radius:5px;font-variant-numeric:tabular-nums}
+.ss-title{font-size:.86rem;font-weight:700;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;transition:color .2s}
+.ss-card:hover .ss-title{color:var(--orange)}
+.ss-card:focus-visible{outline:3px solid var(--orange);outline-offset:4px;border-radius:12px}
+@media(max-width:900px){.ss-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.ss-grid{grid-template-columns:1fr}.ss-head{margin-top:3.5rem}}

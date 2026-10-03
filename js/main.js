@@ -413,3 +413,23 @@ if (contactForm) {
   startViz(0);
   restartAutoplay();
 })();
+
+// "Show all" for long lists. Without JavaScript everything is simply visible;
+// with it, a list opens at a few rows and the button reveals the rest.
+document.querySelectorAll('.more-btn[data-expand]').forEach(btn => {
+  const list = document.getElementById(btn.dataset.expand);
+  if (!list) return;
+  const limit = list.classList.contains('ss-grid') ? 6 : 12;
+  if (list.children.length <= limit) return;
+  const label = btn.textContent;
+  list.classList.add('is-collapsed');
+  btn.hidden = false;
+  btn.setAttribute('aria-controls', list.id);
+  btn.setAttribute('aria-expanded', 'false');
+  btn.addEventListener('click', () => {
+    const collapsed = list.classList.toggle('is-collapsed');
+    btn.textContent = collapsed ? label : 'Show fewer';
+    btn.setAttribute('aria-expanded', String(!collapsed));
+    if (collapsed) list.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
