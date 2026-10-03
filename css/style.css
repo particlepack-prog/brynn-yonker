@@ -103,7 +103,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 @media(prefers-reduced-motion:reduce){.hero-slide{transition:none}}
 .hero-slide-copy{padding:3rem 3.25rem;display:flex;flex-direction:column;justify-content:center;gap:.85rem;color:#fff}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange2)}
-.hero-eyebrow::before{content:'';width:16px;height:1.5px;background:var(--orange2)}
 .hero-slide-copy h2{font-family:var(--serif);font-size:clamp(1.7rem,2.9vw,2.5rem);font-weight:700;line-height:1.15;color:#fff}
 .hero-slide-copy p{font-size:.9rem;color:rgba(255,255,255,.72);line-height:1.7;max-width:38ch}
 .hero-slide-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.8rem;font-weight:700;color:#fff;text-decoration:none;margin-top:.4rem;width:fit-content;border-bottom:1.5px solid rgba(255,255,255,.35);padding-bottom:.15rem;transition:border-color .2s,gap .2s}
@@ -156,7 +155,6 @@ h2 em{font-style:italic;color:var(--orange)}
 .ab-player{background:var(--brown);border-radius:20px;padding:2.25rem 2.5rem;margin-bottom:2.5rem;color:#fff}
 .abp-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1.5rem;flex-wrap:wrap;margin-bottom:1.75rem}
 .abp-eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange2)}
-.abp-eyebrow::before{content:'';width:16px;height:1.5px;background:var(--orange2)}
 .abp-title{font-family:var(--serif);font-size:clamp(1.4rem,2.4vw,1.9rem);font-weight:700;color:#fff;margin:.5rem 0 .35rem}
 .abp-note{font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.6;max-width:46ch}
 .abp-badge{font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#f0c9a8;background:rgba(217,138,99,.18);border:1px solid rgba(217,138,99,.4);padding:.3rem .7rem;border-radius:50px;white-space:nowrap}
@@ -283,7 +281,6 @@ h2 em{font-style:italic;color:var(--orange)}
 .svc-block:last-child{border-bottom:none}
 .svc-side{position:sticky;top:96px;align-self:start}
 .svc-eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green)}
-.svc-eyebrow::before{content:'';width:14px;height:1.5px;background:var(--green)}
 .svc-side h2{font-size:clamp(1.5rem,2.4vw,2rem);margin:.55rem 0 0;text-wrap:balance}
 .svc-body{max-width:64ch}
 .svc-lede{font-family:var(--serif);font-size:1.18rem;font-style:italic;color:var(--brown);line-height:1.55;margin-bottom:1.1rem}
