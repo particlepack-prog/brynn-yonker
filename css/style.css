@@ -91,7 +91,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 .intro-location svg{flex-shrink:0}
 
 .hero-kicker{display:block;font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:.9rem;line-height:1.7}
-.hero-kicker::before{content:'';display:inline-block;vertical-align:middle;width:22px;height:1.5px;background:var(--green);margin-right:.6rem}
 .hero-kicker .sep{margin:0 .35rem}
 @media(max-width:560px){.hero-kicker{letter-spacing:.12em;font-size:.68rem}}
 .hero-kicker .sep{color:var(--orange);opacity:.7}
