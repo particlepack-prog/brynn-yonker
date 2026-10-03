@@ -483,3 +483,15 @@ a.ig-promo:hover img{transform:scale(1.04)}
   .noaa-hero img{object-position:72% 30%}
   .noaa-hero::after{background:linear-gradient(to top,rgba(6,22,28,.95) 0%,rgba(6,22,28,.6) 50%,rgba(6,22,28,0) 80%)}
 }
+
+/* ═══ WIDE SCREENS ═══
+   Content stops at 1240px and centres; section backgrounds still run full width.
+   The Trusted By marquee is left full-bleed on purpose. */
+@media(min-width:901px){
+  section:not(#trusted),.breadcrumb,footer{padding-left:max(4rem,calc((100% - 1240px) / 2));padding-right:max(4rem,calc((100% - 1240px) / 2))}
+  nav{padding-left:max(3.5rem,calc((100% - 1240px) / 2));padding-right:max(3.5rem,calc((100% - 1240px) / 2))}
+}
+/* Taller banner and an anchor on the hydrophone, so it stays in frame at any width. */
+.noaa-hero{min-height:clamp(340px,28vw,400px)}
+.noaa-hero img{object-position:72% 64%}
+.scout-page{padding-top:2.5rem}
