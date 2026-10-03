@@ -416,13 +416,14 @@ footer{background:var(--cream);border-top:1px solid var(--cream2);color:var(--mu
 .scout-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:2rem}
 .scout-head-text{max-width:62ch;display:flex;flex-direction:column;gap:.75rem}
 .scout-head-actions{display:flex;align-items:center;gap:.65rem}
-.ig-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;border-radius:16px;overflow:hidden}
+.ig-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;border-radius:16px;overflow:hidden}
+@media(max-width:1100px){.ig-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .ig-tile{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--brown);display:block;color:#fff;text-decoration:none}
 .ig-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
 /* YouTube thumbnails are letterboxed (bars beside a vertical Short, or above and
    below a wide clip); zooming in crops the bars off either way. */
-.ig-thumb{transform:scale(1.45)}
-.ig-tile:hover .ig-thumb{transform:scale(1.52)}
+.ig-thumb{transform:scale(1.42)}
+.ig-tile:hover .ig-thumb{transform:scale(1.48)}
 .ig-thumb.is-fallback{transform:none}
 .ig-tile:hover .ig-thumb.is-fallback{transform:scale(1.04)}
 .ig-tile::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,20,14,.85) 0%,rgba(10,20,14,0) 48%);pointer-events:none;z-index:1}
@@ -456,8 +457,12 @@ footer{background:var(--cream);border-top:1px solid var(--cream2);color:var(--mu
 @media(max-width:560px){
   .ig-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}
   /* Nothing sits beside the feature on two columns, so it needs its own height. */
-  .ig-feature{grid-row:auto;aspect-ratio:4/5}
+  .ig-feature{grid-row:auto;aspect-ratio:1/1}
   .ig-more{grid-column:span 2;aspect-ratio:auto;padding:1.5rem 1rem}
   .ig-title{font-size:.74rem}
   .scout-head{align-items:flex-start}
 }
+.ig-chip{position:absolute;top:.7rem;right:.7rem;z-index:2;width:30px;height:30px;border-radius:50%;background:rgba(0,0,0,.38);display:flex;align-items:center;justify-content:center;transition:background .2s}
+.ig-chip svg{width:14px;height:14px;fill:none;stroke:#fff;stroke-width:2}
+a.ig-promo:hover .ig-chip{background:var(--orange)}
+a.ig-promo:hover img{transform:scale(1.04)}

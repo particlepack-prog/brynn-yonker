@@ -84,6 +84,12 @@ if (contactForm) {
     '%3C/g%3E%3C/svg%3E';
 
   function fallback(img) {
+    // Step down to YouTube's smaller frame before giving up on YouTube entirely.
+    if (img.dataset.ytAlt && !img.dataset.altTried) {
+      img.dataset.altTried = '1';
+      img.src = img.dataset.ytAlt;
+      return;
+    }
     if (img.dataset.fallbackApplied) return;
     img.dataset.fallbackApplied = '1';
     // Prefer the project's own artwork; the generic waveform is the last resort.
@@ -91,10 +97,15 @@ if (contactForm) {
     img.classList.add('is-fallback');   // lets CSS skip the zoom meant for YouTube frames
   }
 
+  // YouTube answers a missing high-res frame with a 120x90 grey placeholder
+  // rather than an error, so a tiny image counts as a miss too.
+  const missing = img => img.complete && img.naturalWidth <= 120;
+
   document.querySelectorAll('img.video-thumb, img.scout-thumb, img.ig-thumb').forEach(img => {
     img.addEventListener('error', () => fallback(img));
+    img.addEventListener('load', () => { if (img.naturalWidth <= 120) fallback(img); });
     // Cover images that already failed before this script ran.
-    if (img.complete && img.naturalWidth === 0) fallback(img);
+    if (missing(img)) fallback(img);
   });
 
   // Portrait and audiobook covers sit on top of a designed ground (a monogram
