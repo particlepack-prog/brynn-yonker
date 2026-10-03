@@ -15,7 +15,12 @@ body{background:var(--cream);color:var(--brown);font-family:var(--sans);font-wei
 /* ═══ NAV ═══ */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1.1rem 3.5rem;background:var(--navbg);backdrop-filter:blur(12px);border-bottom:1px solid rgba(59,42,26,0.06)}
 .nav-logo{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--brown);text-decoration:none}
-.nav-logo span{color:var(--orange)}
+
+/* logo lockup: name over discipline */
+.logo-text{display:flex;flex-direction:column;line-height:1.05}
+.logo-surname{color:var(--orange)}
+.logo-role{font-family:var(--sans);font-size:.56rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:.28rem}
+.footer-logo .logo-role{font-size:.52rem}
 
 /* waveform mark */
 .wave{display:inline-flex;align-items:center;gap:2.5px;height:22px}
@@ -77,6 +82,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 .hero-head-right{display:flex;align-items:center;gap:1.25rem;flex-shrink:0;padding-bottom:.3rem}
 .intro-location{display:inline-flex;align-items:center;gap:.4rem;font-size:.78rem;font-weight:600;color:var(--muted)}
 .intro-location svg{flex-shrink:0}
+
+.hero-kicker{display:block;font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:.9rem;line-height:1.7}
+.hero-kicker::before{content:'';display:inline-block;vertical-align:middle;width:22px;height:1.5px;background:var(--green);margin-right:.6rem}
+.hero-kicker .sep{margin:0 .35rem}
+@media(max-width:560px){.hero-kicker{letter-spacing:.12em;font-size:.68rem}}
+.hero-kicker .sep{color:var(--orange);opacity:.7}
 
 /* hero slider */
 .hero-slider{position:relative;background:var(--brown);border-radius:20px;overflow:hidden}
@@ -339,7 +350,6 @@ h2 em{font-style:italic;color:var(--orange)}
 /* ═══ FOOTER ═══ */
 footer{background:var(--cream);border-top:1px solid var(--cream2);color:var(--muted);padding:2.25rem 4rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
 .footer-logo{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--brown)}
-.footer-logo span{color:var(--orange)}
 .footer-links{display:flex;gap:1.5rem}
 .footer-links a{font-size:.74rem;color:var(--muted);text-decoration:none;transition:color .2s}
 .footer-links a:hover{color:var(--orange)}
