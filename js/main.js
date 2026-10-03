@@ -8,18 +8,41 @@ if (navToggle && navLinks) {
   });
 }
 
-// Mobile dropdown: tap the parent link's caret area to expand instead of navigating away
-document.querySelectorAll('.nav-links > li').forEach(li => {
-  const dropdown = li.querySelector('.nav-dropdown');
-  if (!dropdown) return;
+// Dropdowns on touch. Phones, tablets and touchscreen laptops have no hover, so
+// the first tap on "Work" or "Services" opens its menu instead of navigating;
+// the menu's own links then work normally.
+const tapToOpen = () => window.matchMedia('(max-width: 900px), (hover: none)').matches;
+const menuItems = Array.from(document.querySelectorAll('.nav-links > li'))
+  .filter(li => li.querySelector('.nav-dropdown'));
+
+menuItems.forEach(li => {
   const parentLink = li.querySelector(':scope > a');
+  parentLink.setAttribute('aria-haspopup', 'true');
+  parentLink.setAttribute('aria-expanded', 'false');
   parentLink.addEventListener('click', e => {
-    if (window.matchMedia('(max-width: 900px)').matches) {
-      e.preventDefault();
-      li.classList.toggle('open');
+    if (!tapToOpen()) return;
+    e.preventDefault();
+    const willOpen = !li.classList.contains('open');
+    menuItems.forEach(other => {               // one menu open at a time
+      other.classList.remove('open');
+      other.querySelector(':scope > a').setAttribute('aria-expanded', 'false');
+    });
+    if (willOpen) {
+      li.classList.add('open');
+      parentLink.setAttribute('aria-expanded', 'true');
     }
   });
 });
+
+// Tapping anywhere outside an open menu closes it.
+document.addEventListener('click', e => {
+  if (e.target.closest('.nav-links > li.open')) return;
+  menuItems.forEach(li => {
+    li.classList.remove('open');
+    li.querySelector(':scope > a').setAttribute('aria-expanded', 'false');
+  });
+});
+
 
 // Fade-up on scroll
 const observer = new IntersectionObserver(entries => {
