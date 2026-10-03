@@ -63,7 +63,7 @@ if (contactForm) {
       '\nProject: ' + d.get('project') +
       '\n\n' + d.get('message')
     );
-    window.location.href = 'mailto:your@email.com?subject=' + subject + '&body=' + body;
+    window.location.href = 'mailto:brynn.yonker@gmail.com?subject=' + subject + '&body=' + body;
     const msg = document.getElementById('form-msg');
     if (msg) msg.style.display = 'block';
   });
@@ -414,18 +414,31 @@ if (contactForm) {
   restartAutoplay();
 })();
 
-// "Show all" for long lists. Without JavaScript everything is simply visible;
-// with it, a list opens at a few rows and the button reveals the rest.
+// "Show all" for long lists. Without JavaScript everything is simply visible.
+// With it, a list opens at a few full rows; rows are counted from the live
+// column count, so the cut-off never leaves a ragged half row.
 document.querySelectorAll('.more-btn[data-expand]').forEach(btn => {
   const list = document.getElementById(btn.dataset.expand);
   if (!list) return;
-  const limit = list.classList.contains('ss-grid') ? 6 : 12;
-  if (list.children.length <= limit) return;
+  const rows = list.classList.contains('ss-grid') ? 2 : 3;
+  const items = Array.from(list.children);
   const label = btn.textContent;
+
+  function columns() {
+    return getComputedStyle(list).gridTemplateColumns.split(' ').filter(Boolean).length || 1;
+  }
+  function mark() {
+    const limit = columns() * rows;
+    items.forEach((el, i) => el.classList.toggle('is-extra', i >= limit));
+    btn.hidden = items.length <= limit && list.classList.contains('is-collapsed');
+  }
+
   list.classList.add('is-collapsed');
-  btn.hidden = false;
   btn.setAttribute('aria-controls', list.id);
   btn.setAttribute('aria-expanded', 'false');
+  mark();
+  window.addEventListener('resize', mark);
+
   btn.addEventListener('click', () => {
     const collapsed = list.classList.toggle('is-collapsed');
     btn.textContent = collapsed ? label : 'Show fewer';
