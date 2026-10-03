@@ -411,3 +411,53 @@ footer{background:var(--cream);border-top:1px solid var(--cream2);color:var(--mu
 .inline-link:hover{text-decoration:underline}
 .services-more{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.75rem;font-size:.84rem;font-weight:700;color:var(--orange);text-decoration:none}
 .services-more:hover{gap:.75rem}
+
+/* ═══ SOUND SCOUT GRID (Instagram-style) ═══ */
+.scout-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:2rem}
+.scout-head-text{max-width:62ch;display:flex;flex-direction:column;gap:.75rem}
+.scout-head-actions{display:flex;align-items:center;gap:.65rem}
+.ig-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;border-radius:16px;overflow:hidden}
+.ig-tile{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--brown);display:block;color:#fff;text-decoration:none}
+.ig-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+/* YouTube thumbnails are letterboxed (bars beside a vertical Short, or above and
+   below a wide clip); zooming in crops the bars off either way. */
+.ig-thumb{transform:scale(1.45)}
+.ig-tile:hover .ig-thumb{transform:scale(1.52)}
+.ig-thumb.is-fallback{transform:none}
+.ig-tile:hover .ig-thumb.is-fallback{transform:scale(1.04)}
+.ig-tile::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,20,14,.85) 0%,rgba(10,20,14,0) 48%);pointer-events:none;z-index:1}
+.ig-caption{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:.85rem .9rem;display:flex;flex-direction:column;gap:.15rem}
+.ig-title{font-size:.82rem;font-weight:700;line-height:1.3;text-wrap:balance}
+.ig-meta{font-size:.66rem;font-weight:600;opacity:.72}
+.ig-play{position:absolute;top:.7rem;right:.7rem;z-index:2;width:30px;height:30px;border-radius:50%;background:rgba(0,0,0,.38);display:flex;align-items:center;justify-content:center;transition:background .2s}
+.ig-play svg{width:11px;height:11px;fill:#fff;margin-left:2px}
+.ig-tile:hover .ig-play{background:var(--orange)}
+.ig-tile:focus-visible{outline:3px solid var(--orange);outline-offset:-3px}
+/* The NOAA feature: a 2x2 block with an accent ring so it reads as the headline. */
+.ig-feature{grid-column:span 2;grid-row:span 2;aspect-ratio:auto;box-shadow:inset 0 0 0 3px var(--orange2)}
+.ig-feature::after{background:linear-gradient(to top,rgba(6,22,28,.94) 0%,rgba(6,22,28,.35) 45%,rgba(6,22,28,0) 70%)}
+.ig-feature img{transition:transform .8s ease}
+.ig-feature:hover img{transform:scale(1.03)}
+.ig-feature-body{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:clamp(1.25rem,3vw,2.25rem);display:flex;flex-direction:column;align-items:flex-start;gap:.6rem}
+.ig-badge{display:inline-flex;align-items:center;gap:.4rem;background:var(--orange);color:#fff;font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.4rem .8rem;border-radius:50px}
+.ig-badge svg{width:13px;height:13px;fill:none;stroke:#fff;stroke-width:2}
+.ig-feature h2{font-size:clamp(1.4rem,2.6vw,2.1rem);color:#fff;margin:0;line-height:1.15;text-wrap:balance}
+.ig-feature p{font-size:.88rem;color:rgba(255,255,255,.78);line-height:1.6;max-width:40ch}
+.ig-cta{font-size:.82rem;font-weight:700;color:#fff;border-bottom:1.5px solid rgba(255,255,255,.4);padding-bottom:.1rem}
+.ig-feature:hover .ig-cta{border-color:#fff}
+.ig-more{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.45rem;text-align:center;padding:1rem;background:linear-gradient(155deg,var(--green) 0%,#243829 100%)}
+.ig-more::after{display:none}
+.ig-more-icon svg{width:34px;height:34px;stroke:#fff;fill:none;stroke-width:1.5}
+.ig-more-title{font-family:var(--serif);font-size:1.05rem;font-weight:700}
+.ig-more-sub{font-size:.74rem;font-weight:700;color:var(--green3)}
+.ig-more:hover .ig-more-sub{text-decoration:underline}
+.ig-note{margin-top:1rem;font-size:.8rem;color:var(--muted)}
+.ig-note a{color:var(--orange);font-weight:700;text-decoration:none}
+@media(max-width:560px){
+  .ig-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}
+  /* Nothing sits beside the feature on two columns, so it needs its own height. */
+  .ig-feature{grid-row:auto;aspect-ratio:4/5}
+  .ig-more{grid-column:span 2;aspect-ratio:auto;padding:1.5rem 1rem}
+  .ig-title{font-size:.74rem}
+  .scout-head{align-items:flex-start}
+}

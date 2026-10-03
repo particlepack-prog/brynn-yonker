@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css?v=476451f6">
+<link rel="stylesheet" href="../css/style.css?v=04ea19dd">
 </head>
 <body>
 
@@ -77,26 +77,56 @@
   </div>
 </section>
 
-<section id="portfolio">
-  <div class="scout-grid">
-    <div>
+<section id="portfolio" class="scout-page">
+  <div class="scout-head">
+    <div class="scout-head-text">
       <p class="scout-intro">Sound Scout is my nature and environmental field recording project. I go out with professional gear and capture the sounds of the natural world. It started as pure love for the outdoors and has grown into something really special.</p>
-      <a class="noaa-badge" href="https://www.fisheries.noaa.gov/new-england-mid-atlantic/science-data/passive-acoustic-technologies#drop-hydrophone" target="_blank">
-        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        Featured by NOAA
-      </a>
-      <div class="scout-social">
-        <a class="social-btn" href="https://www.youtube.com/@sound_scout" target="_blank" title="YouTube"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg></a>
-        <a class="social-btn" href="https://www.tiktok.com/@sound_scout" target="_blank" title="TikTok"><svg viewBox="0 0 24 24"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
-      </div>
+      <p class="scout-intro">It's named after my first dog, Scout. Everything here is original: no stock footage, no library audio.</p>
     </div>
-    <div class="scout-videos">
-      <a class="scout-video-item" href="https://youtu.be/amzTDNVDPd8" target="_blank"><img class="scout-thumb" src="https://i.ytimg.com/vi/amzTDNVDPd8/mqdefault.jpg" data-fallback="../img/work/woodpecker-1.jpg" alt="Pileated Woodpecker"><div><div class="scout-video-title">such a cool guy, pileated woodpecker</div><div class="scout-video-dur">0:10 · Field Recording</div></div></a>
-      <a class="scout-video-item" href="https://youtu.be/gOC17o-iVig" target="_blank"><img class="scout-thumb" src="https://i.ytimg.com/vi/gOC17o-iVig/mqdefault.jpg" data-fallback="../img/work/woodpecker-2.jpg" alt="Woodpecker Mohawk"><div><div class="scout-video-title">pileated woodpecker with the sick mohawk</div><div class="scout-video-dur">0:09 · Field Recording</div></div></a>
-      <a class="scout-video-item" href="https://youtu.be/M6k9ijwNKpU" target="_blank"><img class="scout-thumb" src="https://i.ytimg.com/vi/M6k9ijwNKpU/mqdefault.jpg" data-fallback="../img/work/box-turtle.jpg" alt="Eastern Box Turtle"><div><div class="scout-video-title">eastern box turtle 🐢</div><div class="scout-video-dur">0:10 · Field Recording</div></div></a>
-      <a class="scout-video-item" href="https://youtu.be/np1hCa2UZ5g" target="_blank"><img class="scout-thumb" src="https://i.ytimg.com/vi/np1hCa2UZ5g/mqdefault.jpg" data-fallback="../img/work/robins.jpg" alt="Robins"><div><div class="scout-video-title">the Robins of the Downspout Nest</div><div class="scout-video-dur">0:09 · Field Recording</div></div></a>
+    <div class="scout-head-actions">
+      <a class="btn-primary" href="https://www.youtube.com/@sound_scout" target="_blank" rel="noopener">Follow on YouTube</a>
+      <a class="social-btn" href="https://www.tiktok.com/@sound_scout" target="_blank" rel="noopener" title="TikTok"><svg viewBox="0 0 24 24"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
     </div>
   </div>
+
+  <!-- Grid: the NOAA feature takes a 2x2 block; each clip is one tile. -->
+  <div class="ig-grid">
+    <a class="ig-tile ig-feature" href="https://www.fisheries.noaa.gov/new-england-mid-atlantic/science-data/passive-acoustic-technologies#drop-hydrophone" target="_blank" rel="noopener">
+      <img src="../img/work/noaa-feature.jpg" alt="Illustration of a hydrophone recording underwater" loading="lazy">
+      <div class="ig-feature-body">
+        <span class="ig-badge"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Featured by NOAA</span>
+        <h2>Recognized by NOAA Fisheries</h2>
+        <p>Sound Scout has been featured by NOAA. See it on NOAA Fisheries&rsquo; passive acoustics page.</p>
+        <span class="ig-cta">View the feature &rarr;</span>
+      </div>
+    </a>
+    <a class="ig-tile" href="https://youtu.be/amzTDNVDPd8" target="_blank" rel="noopener">
+      <img class="ig-thumb" src="https://i.ytimg.com/vi/amzTDNVDPd8/hqdefault.jpg" data-fallback="../img/work/woodpecker-1-tall.jpg" alt="such a cool guy, pileated woodpecker" loading="lazy">
+      <span class="ig-play" aria-hidden="true"><svg viewBox="0 0 10 10"><polygon points="3,1.5 8.5,5 3,8.5"/></svg></span>
+      <span class="ig-caption"><span class="ig-title">such a cool guy, pileated woodpecker</span><span class="ig-meta">0:10 &middot; Field recording</span></span>
+    </a>
+    <a class="ig-tile" href="https://youtu.be/gOC17o-iVig" target="_blank" rel="noopener">
+      <img class="ig-thumb" src="https://i.ytimg.com/vi/gOC17o-iVig/hqdefault.jpg" data-fallback="../img/work/woodpecker-2-tall.jpg" alt="pileated woodpecker with the sick mohawk" loading="lazy">
+      <span class="ig-play" aria-hidden="true"><svg viewBox="0 0 10 10"><polygon points="3,1.5 8.5,5 3,8.5"/></svg></span>
+      <span class="ig-caption"><span class="ig-title">pileated woodpecker with the sick mohawk</span><span class="ig-meta">0:09 &middot; Field recording</span></span>
+    </a>
+    <a class="ig-tile" href="https://youtu.be/M6k9ijwNKpU" target="_blank" rel="noopener">
+      <img class="ig-thumb" src="https://i.ytimg.com/vi/M6k9ijwNKpU/hqdefault.jpg" data-fallback="../img/work/box-turtle-tall.jpg" alt="eastern box turtle" loading="lazy">
+      <span class="ig-play" aria-hidden="true"><svg viewBox="0 0 10 10"><polygon points="3,1.5 8.5,5 3,8.5"/></svg></span>
+      <span class="ig-caption"><span class="ig-title">eastern box turtle</span><span class="ig-meta">0:10 &middot; Field recording</span></span>
+    </a>
+    <a class="ig-tile" href="https://youtu.be/np1hCa2UZ5g" target="_blank" rel="noopener">
+      <img class="ig-thumb" src="https://i.ytimg.com/vi/np1hCa2UZ5g/hqdefault.jpg" data-fallback="../img/work/robins-tall.jpg" alt="the Robins of the Downspout Nest" loading="lazy">
+      <span class="ig-play" aria-hidden="true"><svg viewBox="0 0 10 10"><polygon points="3,1.5 8.5,5 3,8.5"/></svg></span>
+      <span class="ig-caption"><span class="ig-title">the Robins of the Downspout Nest</span><span class="ig-meta">0:09 &middot; Field recording</span></span>
+    </a>
+    <a class="ig-tile ig-more" href="https://www.youtube.com/@sound_scout" target="_blank" rel="noopener">
+      <span class="ig-more-icon"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg></span>
+      <span class="ig-more-title">More from the field</span>
+      <span class="ig-more-sub">Watch on YouTube &rarr;</span>
+    </a>
+  </div>
+  <p class="ig-note">New clips go up on <a href="https://www.youtube.com/@sound_scout" target="_blank" rel="noopener">YouTube</a> and <a href="https://www.tiktok.com/@sound_scout" target="_blank" rel="noopener">TikTok</a> first.</p>
 </section>
 
 <!-- FOOTER -->
@@ -111,6 +141,6 @@
   <div class="footer-copy">&copy; 2025 Brynn Yonker. All rights reserved.</div>
 </footer>
 
-<script src="../js/main.js?v=476451f6"></script>
+<script src="../js/main.js?v=04ea19dd"></script>
 </body>
 </html>

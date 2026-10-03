@@ -88,9 +88,10 @@ if (contactForm) {
     img.dataset.fallbackApplied = '1';
     // Prefer the project's own artwork; the generic waveform is the last resort.
     img.src = img.dataset.fallback || PLACEHOLDER;
+    img.classList.add('is-fallback');   // lets CSS skip the zoom meant for YouTube frames
   }
 
-  document.querySelectorAll('img.video-thumb, img.scout-thumb').forEach(img => {
+  document.querySelectorAll('img.video-thumb, img.scout-thumb, img.ig-thumb').forEach(img => {
     img.addEventListener('error', () => fallback(img));
     // Cover images that already failed before this script ran.
     if (img.complete && img.naturalWidth === 0) fallback(img);
