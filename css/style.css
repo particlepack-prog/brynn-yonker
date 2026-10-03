@@ -550,3 +550,28 @@ a.ig-promo:hover img{transform:scale(1.04)}
 .hero-head .intro-roles{font-size:clamp(.98rem,1.3vw,1.15rem);letter-spacing:.01em;color:var(--brown2);line-height:1.6}
 /* Visible to screen readers and search engines, not on screen. */
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* ═══ LEARN (blog) ═══ */
+.learn-page{padding-top:2.5rem}
+.post-tag{font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green)}
+.post-title{font-family:var(--serif);font-weight:700;color:var(--brown);line-height:1.2;text-wrap:balance;transition:color .2s}
+.post-excerpt{font-size:.9rem;color:var(--muted);line-height:1.7}
+.post-excerpt a{color:var(--orange);font-weight:700;text-decoration:none}
+.post-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.82rem;font-weight:700;color:var(--orange);transition:gap .2s}
+.post-thumb{position:relative;display:block;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:var(--brown)}
+.post-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.post-feature{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:2.5rem;align-items:center;text-decoration:none;padding-bottom:3rem;margin-bottom:3rem;border-bottom:1.5px solid var(--cream2)}
+.post-feature .post-body{display:flex;flex-direction:column;align-items:flex-start;gap:.75rem}
+.post-feature .post-title{font-size:clamp(1.6rem,2.8vw,2.4rem)}
+.post-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem 1.5rem}
+.post-card{display:flex;flex-direction:column;align-items:flex-start;gap:.6rem;text-decoration:none}
+.post-card .post-title{font-size:1.2rem}
+.post-card .post-thumb{width:100%;margin-bottom:.3rem}
+a.post-feature:hover .post-thumb img,a.post-card:hover .post-thumb img{transform:scale(1.03)}
+a.post-feature:hover .post-title,a.post-card:hover .post-title{color:var(--orange)}
+a.post-feature:hover .post-link,a.post-card:hover .post-link{gap:.65rem}
+a.post-feature:focus-visible,a.post-card:focus-visible{outline:3px solid var(--orange);outline-offset:6px;border-radius:14px}
+.post-soon{justify-content:center;padding:1.75rem;border:1.5px dashed var(--cream2);border-radius:14px;background:#fff}
+@media(min-width:1400px){.post-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:900px){.post-feature{grid-template-columns:1fr;gap:1.25rem}.post-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.post-grid{grid-template-columns:1fr}}
