@@ -628,3 +628,16 @@ a.post-feature:focus-visible,a.post-card:focus-visible{outline:3px solid var(--o
   .hero-roles .role-sep{display:none}
 }
 @media(max-width:560px){.hero-head h1.hero-roles{font-size:1.12rem;line-height:1.55}}
+
+/* ═══ THINNER CREDITS STRIP ═══
+   Label and scrolling names share one line. Top padding = header height plus a
+   little air, since the header is fixed over this strip. */
+#trusted{display:flex;align-items:center;gap:1.75rem;padding:calc(93px + .7rem) 0 .7rem}
+#trusted .trusted-label{margin:0;padding-left:4rem;white-space:nowrap;flex-shrink:0;text-align:left}
+#trusted .marquee{flex:1;min-width:0}
+#trusted .marquee-track span:not(.dot){font-size:clamp(.98rem,1.3vw,1.2rem);padding:0 1.6rem}
+@media(max-width:900px){
+  #trusted{flex-direction:column;align-items:stretch;gap:.45rem;padding:calc(66px + .55rem) 0 .6rem}
+  #trusted .trusted-label{padding-left:0;text-align:center}
+  #trusted .marquee-track span:not(.dot){padding:0 1.2rem}
+}
