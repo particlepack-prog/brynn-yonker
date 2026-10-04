@@ -877,3 +877,13 @@ section.cta-band{background:var(--brown)}
   .marvel-covers{justify-self:stretch;max-width:none;gap:.9rem}
   .marvel-cap{font-size:.92rem}
 }
+/* Marvel band on a light ground, so it doesn't run dark-into-dark after the slider. */
+.marvel-band{background:#fff;color:var(--brown);border-top:1.5px solid var(--cream2);border-bottom:1.5px solid var(--cream2)}
+.marvel-copy h2{color:var(--brown)}
+.marvel-copy h2 em{color:var(--orange)}
+.marvel-copy p{color:var(--muted)}
+.marvel-copy p strong{color:var(--brown)}
+.marvel-band .btn-primary:hover{background:var(--brown);color:#fff}
+.marvel-cover{color:var(--brown)}
+.marvel-cover img{box-shadow:0 18px 40px color-mix(in srgb,var(--brown) 24%,transparent)}
+.marvel-cover:hover .marvel-cap{color:var(--orange)}
