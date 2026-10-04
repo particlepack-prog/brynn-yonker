@@ -451,3 +451,16 @@ document.querySelectorAll('.more-btn[data-expand]').forEach(btn => {
     if (collapsed) list.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
+
+// Click-to-play YouTube. The page shows a still and a play button; YouTube's
+// player (privacy-enhanced domain) loads only when someone presses play.
+document.querySelectorAll('.yt-lite[data-yt]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + btn.dataset.yt + '?autoplay=1&playsinline=1&rel=0';
+    f.title = btn.dataset.title || 'YouTube video';
+    f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    f.allowFullscreen = true;
+    btn.replaceWith(f);
+  });
+});

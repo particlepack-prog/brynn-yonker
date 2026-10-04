@@ -466,8 +466,8 @@ a.ig-promo:hover img{transform:scale(1.04)}
 /* NOAA banner: a full-width hero between the Sound Scout intro and the grid.
    Art fills the panel; a left-side shade keeps the copy readable. */
 .noaa-hero{position:relative;display:flex;align-items:center;min-height:340px;margin-bottom:1.25rem;border-radius:20px;overflow:hidden;color:#fff;text-decoration:none;background:#0b1e26;box-shadow:inset 0 0 0 3px var(--orange2)}
-.noaa-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% center;transition:transform .8s ease}
-.noaa-hero:hover img{transform:scale(1.025)}
+.noaa-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% center;transition:transform .8s ease}
+
 .noaa-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,22,28,.94) 0%,rgba(6,22,28,.72) 38%,rgba(6,22,28,0) 68%);pointer-events:none}
 .noaa-hero-body{position:relative;z-index:1;padding:clamp(1.75rem,4vw,3.25rem);max-width:540px;display:flex;flex-direction:column;align-items:flex-start;gap:.7rem}
 .noaa-hero-body h2{font-size:clamp(1.6rem,3vw,2.4rem);color:#fff;margin:0;line-height:1.12;text-wrap:balance}
@@ -476,13 +476,12 @@ a.ig-promo:hover img{transform:scale(1.04)}
 .noaa-hero:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
 @media(max-width:700px){
   .noaa-hero{align-items:flex-end;min-height:440px}
-  .noaa-hero img{object-position:72% 30%}
   .noaa-hero::after{background:linear-gradient(to top,rgba(6,22,28,.95) 0%,rgba(6,22,28,.6) 50%,rgba(6,22,28,0) 80%)}
 }
 
 /* Taller banner and an anchor on the hydrophone, so it stays in frame at any width. */
 .noaa-hero{min-height:clamp(340px,26vw,460px)}
-.noaa-hero img{object-position:72% 64%}
+
 .scout-page{padding-top:2.5rem}
 
 /* Sound Scout clips use pre-cropped local thumbnails, so no zoom is needed. */
@@ -645,3 +644,35 @@ a.post-feature:focus-visible,a.post-card:focus-visible{outline:3px solid var(--o
 /* Headline back on top: roles line steps down to a supporting size. */
 .hero-head .hero-roles{font-family:var(--sans);font-size:clamp(1.1rem,1.6vw,1.45rem);font-weight:700;line-height:1.45;color:var(--brown2);margin:0}
 @media(max-width:560px){.hero-head .hero-roles{font-size:1.02rem}}
+
+/* ═══ NOAA FEATURE (Sound Scout) ═══
+   Copy on the left, the clip itself on the right; the backdrop is the same
+   underwater frame, blurred and darkened so the copy stays readable. */
+.noaa-feature{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:2rem;padding-right:clamp(1.25rem,4vw,3.5rem)}
+.noaa-feature .noaa-bg{filter:blur(16px) brightness(.5) saturate(1.15);transform:scale(1.12)}
+.noaa-feature::after{background:linear-gradient(90deg,rgba(6,22,28,.88) 0%,rgba(6,22,28,.55) 55%,rgba(6,22,28,.3) 100%)}
+.noaa-actions{display:flex;flex-wrap:wrap;gap:.6rem 1.5rem;margin-top:.2rem}
+.noaa-actions .ig-cta{text-decoration:none;color:#fff}
+.noaa-actions .ig-cta:hover{border-color:#fff}
+.noaa-player{position:relative;z-index:1;width:clamp(190px,17vw,250px);padding:clamp(1.5rem,3vw,2.25rem) 0}
+.yt-lite,.noaa-player iframe{display:block;width:100%;aspect-ratio:9/16;border:0;border-radius:16px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.45)}
+.yt-lite{position:relative;padding:0;cursor:pointer;background:#000}
+.yt-lite img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.yt-lite:hover img{transform:scale(1.04)}
+.yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:var(--orange);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.35);transition:transform .2s,background .2s}
+.yt-play svg{width:18px;height:18px;fill:#fff;margin-left:3px}
+.yt-lite:hover .yt-play{transform:translate(-50%,-50%) scale(1.08);background:var(--orange2)}
+.yt-lite:focus-visible{outline:3px solid var(--orange2);outline-offset:4px}
+@media(max-width:700px){
+  .noaa-feature{grid-template-columns:1fr;align-items:start;padding-right:0;min-height:0}
+  .noaa-feature::after{background:rgba(6,22,28,.7)}
+  .noaa-player{justify-self:center;width:min(240px,70vw);padding:0 0 1.75rem}
+}
+/* Real hydrophone frame on Home: keep the hydrophone in view. */
+.hero-slide-img{object-position:center}
+.featured-art img{object-position:center}
+/* Home strip: seven clips across on desktop; the seventh hides on smaller
+   screens so rows stay even. */
+.field-row{grid-template-columns:repeat(7,minmax(0,1fr))}
+@media(max-width:1100px){.field-row{grid-template-columns:repeat(3,minmax(0,1fr))}.field-row>.ig-tile:nth-child(7){display:none}}
+@media(max-width:560px){.field-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
