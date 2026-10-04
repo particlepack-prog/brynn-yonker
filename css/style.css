@@ -892,3 +892,25 @@ section.cta-band{background:var(--brown)}
 .owned-badge{display:inline-flex;align-items:center;gap:.55rem;margin:0;padding:.55rem 1rem .55rem .8rem;border:1.5px solid color-mix(in srgb,var(--orange) 35%,transparent);border-radius:50px;background:color-mix(in srgb,var(--orange) 7%,transparent);color:var(--brown);font-size:.88rem;font-weight:700;letter-spacing:.01em}
 .owned-badge svg{width:20px;height:20px;color:var(--orange);flex-shrink:0}
 @media(min-width:901px){.hero-head-right{flex-direction:row;align-items:center;gap:1.5rem}}
+/* ═══ HOME OPENING: headline, lede, actions, proof ═══ */
+.hero-pitch{max-width:880px;margin-bottom:2.75rem}
+.hero-pitch .hero-title{font-family:var(--serif);font-size:clamp(2.5rem,5.4vw,4.6rem);font-weight:700;line-height:1.04;letter-spacing:-.015em;color:var(--brown);margin:0 0 1.1rem;max-width:15ch;text-wrap:balance}
+.hero-pitch .hero-title em{font-style:italic;color:var(--orange)}
+.hero-lede{font-size:clamp(1.05rem,1.45vw,1.25rem);line-height:1.6;color:var(--brown2);max-width:56ch;margin-bottom:1.6rem}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1.75rem;margin-bottom:1.6rem}
+.hero-actions .btn-primary{font-size:.95rem;padding:.9rem 1.8rem}
+.hero-secondary{display:inline-flex;align-items:center;gap:.5rem;min-height:44px;font-size:.95rem;font-weight:700;color:var(--brown);text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--brown) 30%,transparent);text-decoration-thickness:1.5px;text-underline-offset:.35em;transition:color .2s,gap .2s}
+.hero-secondary:hover{color:var(--orange);gap:.7rem}
+.hero-secondary svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.5}
+.hero-proof{list-style:none;display:flex;flex-wrap:wrap;row-gap:.35rem;margin-left:-1.7rem;clip-path:inset(0 0 0 1.7rem);font-size:.86rem;font-weight:600;color:var(--muted)}
+/* Each item carries its dot on the left; the list's negative margin and clip
+   hide the dot of whichever item starts a line, so dots only sit between items. */
+.hero-proof li{position:relative;padding-left:1.7rem}
+.hero-proof li::before{content:'';position:absolute;left:.8rem;top:50%;width:4px;height:4px;margin-top:-2px;border-radius:50%;background:var(--orange);opacity:.6}
+@media(max-width:560px){
+  .hero-pitch{margin-bottom:2rem}
+  .hero-proof{flex-direction:column;margin-left:0;clip-path:none;row-gap:.4rem}
+  .hero-proof li{padding-left:1rem}
+  .hero-proof li::before{left:0;top:.62em;margin-top:0}
+}
+}
