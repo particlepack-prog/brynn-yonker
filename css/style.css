@@ -1012,3 +1012,8 @@ section.cta-band{background:var(--brown)}
 .svc-row#audiobooks .svc-covers{width:auto;height:84%;aspect-ratio:1}
 .svc-row#audiobooks:nth-child(odd) .svc-media{background:color-mix(in srgb,var(--orange) 9%,var(--cream))}
 .svc-also{font-size:.88rem;color:var(--muted);margin:-.2rem 0 .9rem;max-width:46ch}
+/* Home opening without a slogan: the plain description is the heading. */
+.hero-statement{font-family:var(--sans);font-size:clamp(1.35rem,2.1vw,1.75rem);font-weight:600;line-height:1.45;color:var(--brown);max-width:34ch;margin:0 0 1.5rem;letter-spacing:-.005em}
+.hero-pitch{margin-bottom:2.5rem}
+@media(max-width:560px){.hero-statement{font-size:1.25rem}}
+.hero-statement{text-wrap:balance;max-width:40ch}
