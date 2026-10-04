@@ -710,3 +710,17 @@ a.video-card:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
 }
 /* On dark panels the accent switches to the light orange so emphasis stays readable. */
 #contact.cta-band h2 em,.noaa-hero-body h2 em,.ig-feature h2 em,.hero-slide-copy h2 em{color:var(--orange2)}
+/* Production Sound: column counts that divide the 18 cards evenly, so every
+   row is full (6 x 3 on desktop, 3 x 6 on tablets, 2 x 9 on phones). */
+.prod-grid{grid-template-columns:repeat(6,minmax(0,1fr))}
+@media(max-width:1200px){.prod-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:700px){.prod-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}}
+@media(max-width:700px){.prod-grid .video-title{font-size:.78rem}.prod-grid .video-meta{display:none}.prod-grid .video-play{width:36px;height:36px}}
+/* Play badge sits in the corner so it never covers the title, whatever the card size. */
+.video-play{top:.65rem;right:.65rem;left:auto;transform:none;width:34px;height:34px;opacity:.92}
+.video-card:hover .video-play{opacity:1;transform:scale(1.08)}
+.video-play svg{width:11px;height:11px}
+.prod-grid .video-play{width:34px;height:34px}
+@media(max-width:700px){.prod-grid .video-play{width:30px;height:30px;top:.5rem;right:.5rem}}
+/* Deeper shade under card titles: some thumbnails carry their own big lettering. */
+.video-overlay{background:linear-gradient(to top,color-mix(in srgb,var(--brown) 94%,transparent) 0%,color-mix(in srgb,var(--brown) 70%,transparent) 38%,transparent 72%)}
