@@ -837,3 +837,12 @@ section.cta-band{background:var(--brown)}
   .ab-feature-card:nth-child(2){margin-top:2.5rem}
 }
 @media(min-width:1600px){.ab-hero-feature{width:min(100%,780px);gap:1.75rem}}
+/* Three featured covers: equal size, evenly spaced, top-aligned. */
+.ab-hero-feature{grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}
+@media(min-width:1001px){
+  .ab-feature-card:nth-child(2){margin-top:0}
+  .ab-hero-feature{width:min(100%,760px);gap:1.5rem}
+}
+@media(min-width:1600px){.ab-hero-feature{width:min(100%,900px);gap:1.75rem}}
+@media(max-width:560px){.ab-hero-feature{gap:.75rem}.ab-feature-title{font-size:.92rem}.ab-feature-by{font-size:.74rem}}
+@media(min-width:1001px) and (max-width:1400px){.ab-hero{grid-template-columns:minmax(0,570px) minmax(0,1fr);gap:2.5rem}.ab-hero-feature{width:100%;gap:1.1rem}}
