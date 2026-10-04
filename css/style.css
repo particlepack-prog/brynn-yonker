@@ -990,3 +990,24 @@ section.cta-band{background:var(--brown)}
   .svc-row:nth-child(even) .svc-media{margin-top:0}
   .svc-num{font-size:2.2rem;margin-bottom:.35rem}
 }
+/* ═══ SERVICES: symmetric rows ═══
+   One centred column; every row is two equal halves (art and text), centred
+   on each other, with the same art size and spacing all the way down. */
+.svc-page{max-width:1080px;margin:0 auto;padding:3rem 4rem 2rem}
+.svc-row,.svc-row:nth-child(even){grid-template-columns:repeat(2,minmax(0,1fr));gap:4rem;align-items:center;padding:2.75rem 0}
+.svc-text{padding-top:0}
+.svc-row:nth-child(even) .svc-media{margin-top:0;order:2}
+.svc-media,.svc-art{width:100%}
+.svc-art,.svc-media img{aspect-ratio:4/3}
+.svc-row#audiobooks .svc-media{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;background:var(--green3);border-radius:12px}
+.svc-row#audiobooks .svc-covers{width:62%;max-width:none;margin:0}
+.svc-text h2{margin-top:0}
+@media(max-width:900px){
+  .svc-page{padding:2rem 1.5rem 1rem}
+  .svc-row,.svc-row:nth-child(even){grid-template-columns:1fr;gap:1.25rem;padding:1.75rem 0}
+  .svc-row:nth-child(even) .svc-media{order:0}
+  .svc-media{max-width:none}
+}
+.svc-row#audiobooks .svc-covers img{aspect-ratio:1;width:100%;height:auto}
+.svc-row#audiobooks .svc-covers{width:auto;height:84%;aspect-ratio:1}
+.svc-row#audiobooks:nth-child(odd) .svc-media{background:color-mix(in srgb,var(--orange) 9%,var(--cream))}
