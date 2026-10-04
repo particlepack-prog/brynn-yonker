@@ -913,4 +913,8 @@ section.cta-band{background:var(--brown)}
   .hero-proof li{padding-left:1rem}
   .hero-proof li::before{left:0;top:.62em;margin-top:0}
 }
-}
+.hero-identity{font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin-bottom:.9rem}
+.hero-identity span{color:var(--orange);margin:0 .35em}
+.hero-pitch .hero-title{max-width:none;font-size:clamp(2.3rem,4.6vw,4.2rem)}
+/* 'I find it.' lands on its own line */
+.hero-pitch .hero-title em{display:block}
