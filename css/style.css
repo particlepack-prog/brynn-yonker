@@ -1017,3 +1017,20 @@ section.cta-band{background:var(--brown)}
 .hero-pitch{margin-bottom:2.5rem}
 @media(max-width:560px){.hero-statement{font-size:1.25rem}}
 .hero-statement{text-wrap:balance;max-width:40ch}
+/* ═══ SERVICE PANEL (top of each combined page) ═══ */
+.svc-panel{padding-top:2.5rem;padding-bottom:1rem}
+.svc-panel-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:2rem 4rem;align-items:center;background:#fff;border:1.5px solid var(--cream2);border-radius:16px;padding:2rem 2.25rem}
+.svc-panel h2{font-size:1.25rem;margin:0 0 .9rem}
+.svc-points--cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem 2rem;margin-bottom:.4rem}
+.svc-panel .svc-also{margin:.8rem 0 0}
+.svc-panel .svc-spec-panel{margin:.6rem 0 0}
+.svc-panel-cta{border-left:1.5px solid var(--cream2);padding-left:2.5rem}
+.svc-panel-cta p{font-size:.98rem;font-weight:600;color:var(--brown);line-height:1.5;margin-bottom:1rem}
+@media(max-width:900px){
+  .svc-panel{padding-top:1.5rem}
+  .svc-panel-inner{grid-template-columns:1fr;padding:1.5rem 1.35rem;gap:1.5rem}
+  .svc-points--cols{grid-template-columns:1fr}
+  .svc-panel-cta{border-left:none;border-top:1.5px solid var(--cream2);padding:1.4rem 0 0}
+}
+/* Services overview rows: name, one line, a link */
+.svc-row .svc-line{margin-bottom:.6rem}
