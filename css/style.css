@@ -575,3 +575,22 @@ a.post-feature:focus-visible,a.post-card:focus-visible{outline:3px solid var(--o
 @media(min-width:1400px){.post-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(max-width:900px){.post-feature{grid-template-columns:1fr;gap:1.25rem}.post-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.post-grid{grid-template-columns:1fr}}
+
+/* ═══ LARGER HEADER (desktop) ═══ */
+@media(min-width:901px){
+  nav{padding-top:1.35rem;padding-bottom:1.35rem}
+  .nav-logo{font-size:1.45rem;gap:.75rem}
+  .nav-logo .wave{transform:scale(1.25);transform-origin:left center;margin-right:.35rem}
+  .nav-logo .logo-role{font-size:.64rem;margin-top:.32rem}
+  .nav-links{gap:2.4rem}
+  .nav-links>li>a{font-size:.94rem}
+  .nav-caret{width:11px;height:11px}
+  .nav-cta{font-size:.9rem;padding:.7rem 1.55rem}
+  .nav-dropdown{min-width:240px}
+  .nav-dropdown a .dd-title{font-size:.9rem}
+  .nav-dropdown a .dd-desc{font-size:.76rem}
+  /* keep sticky and anchored content clear of the taller bar */
+  .svc-side{top:118px}
+  .svc-block{scroll-margin-top:112px}
+  #trusted{padding-top:7.4rem}
+}
