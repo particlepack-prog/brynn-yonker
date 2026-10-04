@@ -317,8 +317,11 @@ if (contactForm) {
     ctx.closePath();
   }
 
+  // A slide can show a still image instead of animated bars; those slides get
+  // no entry and the canvas helpers skip them.
   const entries = slides.map(slide => {
     const canvas = slide.querySelector('canvas.hero-canvas');
+    if (!canvas) return null;
     const config = vizConfigs[canvas.dataset.viz];
     const heights = new Array(config.bars).fill(0).map(() => Math.random() * 0.4);
     const targets = heights.slice();
@@ -326,6 +329,7 @@ if (contactForm) {
   });
 
   function sizeCanvas(entry) {
+    if (!entry) return;
     const rect = entry.canvas.getBoundingClientRect();
     const dpr = window.devicePixelRatio || 1;
     entry.canvas.width = Math.max(1, Math.round(rect.width * dpr));
@@ -365,6 +369,7 @@ if (contactForm) {
 
   function startViz(i) {
     const entry = entries[i];
+    if (!entry) return;
     sizeCanvas(entry);
     if (reduceMotion) { drawFrame(entry); return; }
     if (!entry.raf) loop(entry);
@@ -372,7 +377,7 @@ if (contactForm) {
 
   function stopViz(i) {
     const entry = entries[i];
-    if (entry.raf) { cancelAnimationFrame(entry.raf); entry.raf = null; }
+    if (entry && entry.raf) { cancelAnimationFrame(entry.raf); entry.raf = null; }
   }
 
   let index = 0;

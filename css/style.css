@@ -594,3 +594,10 @@ a.post-feature:focus-visible,a.post-card:focus-visible{outline:3px solid var(--o
   .svc-block{scroll-margin-top:112px}
   #trusted{padding-top:7.4rem}
 }
+
+
+/* Field recording slide: the NOAA hydrophone art in place of the bars. */
+.hero-slide-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:72% 64%}
+.hero-noaa{text-decoration:none;align-self:flex-start;transition:background .2s}
+.hero-noaa:hover{background:var(--orange2)}
+.hero-noaa:focus-visible{outline:2px solid #fff;outline-offset:3px}
