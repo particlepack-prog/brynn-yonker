@@ -776,3 +776,8 @@ section.cta-band{background:var(--brown)}
 .work-hero .scout-follow{margin-top:.9rem;font-size:.88rem;font-weight:600;color:var(--muted)}
 .scout-follow a{display:inline-block;padding:.65rem 0;margin:-.65rem 0;color:var(--orange);font-weight:700;text-decoration:none}
 .scout-follow a:hover{text-decoration:underline;text-underline-offset:.2em}
+/* Home: the location is part of the pitch, set large with the city in the accent serif. */
+.intro-location--lg{display:flex;align-items:center;gap:.6rem;margin:0;font-size:clamp(1.05rem,1.45vw,1.3rem);font-weight:700;color:var(--brown2);letter-spacing:.005em}
+.intro-location--lg svg{width:clamp(20px,1.6vw,24px);height:auto;flex-shrink:0;color:var(--orange)}
+.intro-location--lg em{font-family:var(--serif);font-style:italic;font-weight:700;font-size:1.45em;color:var(--orange);letter-spacing:0}
+.hero-head-right{padding-bottom:0}
