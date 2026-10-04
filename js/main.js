@@ -34,6 +34,47 @@ menuItems.forEach(li => {
   });
 });
 
+// Escape closes any open menu, and the mobile menu, returning focus to its button.
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Escape') return;
+  menuItems.forEach(li => {
+    li.classList.remove('open');
+    li.querySelector(':scope > a').setAttribute('aria-expanded', 'false');
+  });
+  if (navLinks && navLinks.classList.contains('open')) {
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.focus();
+  }
+});
+
+// Pause control. One switch stops every looping animation (the credits ticker,
+// the hero slider and its bars, the logo waveform). The choice is remembered
+// across pages, so a visitor who pauses once isn't greeted by motion again.
+const motion = (function () {
+  const KEY = 'by-motion-paused';
+  let paused = false;
+  try { paused = localStorage.getItem(KEY) === '1'; } catch (e) {}
+  const listeners = [];
+  const buttons = Array.from(document.querySelectorAll('[data-motion-toggle]'));
+
+  function apply() {
+    document.documentElement.classList.toggle('motion-paused', paused);
+    buttons.forEach(b => b.setAttribute('aria-label', paused ? 'Play animations' : 'Pause animations'));
+    listeners.forEach(fn => fn(paused));
+  }
+  buttons.forEach(b => b.addEventListener('click', () => {
+    paused = !paused;
+    try { localStorage.setItem(KEY, paused ? '1' : '0'); } catch (e) {}
+    apply();
+  }));
+  apply();
+  return {
+    get paused() { return paused; },
+    onChange(fn) { listeners.push(fn); }
+  };
+})();
+
 // Tapping anywhere outside an open menu closes it.
 document.addEventListener('click', e => {
   if (e.target.closest('.nav-links > li.open')) return;
@@ -367,11 +408,15 @@ if (contactForm) {
     entry.raf = requestAnimationFrame(() => loop(entry));
   }
 
+  // Bars and autoplay run only while the slider is on screen and motion is on.
+  let onScreen = true;
+  const still = () => reduceMotion || motion.paused || !onScreen;
+
   function startViz(i) {
     const entry = entries[i];
     if (!entry) return;
     sizeCanvas(entry);
-    if (reduceMotion) { drawFrame(entry); return; }
+    if (still()) { drawFrame(entry); return; }
     if (!entry.raf) loop(entry);
   }
 
@@ -387,16 +432,19 @@ if (contactForm) {
     const next = (i + slides.length) % slides.length;
     slides[index].classList.remove('is-active');
     dots[index].classList.remove('is-active');
+    dots[index].removeAttribute('aria-current');
     stopViz(index);
     index = next;
     slides[index].classList.add('is-active');
     dots[index].classList.add('is-active');
+    dots[index].setAttribute('aria-current', 'true');
     startViz(index);
   }
 
   function restartAutoplay() {
     if (timer) clearInterval(timer);
-    if (reduceMotion) return;
+    timer = null;
+    if (still()) return;
     timer = setInterval(() => goTo(index + 1), AUTOPLAY_MS);
   }
 
@@ -404,16 +452,27 @@ if (contactForm) {
   if (nextBtn) nextBtn.addEventListener('click', () => { goTo(index + 1); restartAutoplay(); });
   dots.forEach((dot, i) => dot.addEventListener('click', () => { goTo(i); restartAutoplay(); }));
 
-  root.addEventListener('mouseenter', () => { if (timer) clearInterval(timer); });
+  root.addEventListener('mouseenter', () => { if (timer) clearInterval(timer); timer = null; });
   root.addEventListener('mouseleave', restartAutoplay);
-  root.addEventListener('focusin', () => { if (timer) clearInterval(timer); });
-  root.addEventListener('focusout', restartAutoplay);
+  root.addEventListener('focusin', () => { if (timer) clearInterval(timer); timer = null; });
+  root.addEventListener('focusout', e => { if (!root.contains(e.relatedTarget)) restartAutoplay(); });
 
   let resizeTimer = null;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => sizeCanvas(entries[index]), 120);
   });
+
+  function refresh() {
+    stopViz(index);
+    startViz(index);
+    restartAutoplay();
+  }
+  motion.onChange(refresh);
+  new IntersectionObserver(([e]) => {
+    onScreen = e.isIntersecting;
+    refresh();
+  }).observe(root);
 
   startViz(0);
   restartAutoplay();

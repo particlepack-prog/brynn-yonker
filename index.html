@@ -45,9 +45,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=29dfe6dd">
+<link rel="stylesheet" href="css/style.css?v=0c646fa4">
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <!-- NAV -->
 <nav aria-label="Main">
@@ -81,31 +82,38 @@
   </ul>
 </nav>
 
+<main id="main" tabindex="-1">
+
 <!-- TRUSTED BY (scrolling) -->
 <section id="trusted">
   <span class="trusted-label">Trusted By</span>
   <div class="marquee">
     <div class="marquee-track">
-      <span>Good Morning America</span><span class="dot">●</span>
-      <span>ABC 20/20</span><span class="dot">●</span>
-      <span>Lifetime</span><span class="dot">●</span>
-      <span>HGTV</span><span class="dot">●</span>
-      <span>Outside TV</span><span class="dot">●</span>
-      <span>Coca-Cola</span><span class="dot">●</span>
-      <span>NOAA</span><span class="dot">●</span>
-      <span>Pivotal Ventures</span><span class="dot">●</span>
-      <span>StyleBlueprint</span><span class="dot">●</span>
-      <span>Good Morning America</span><span class="dot">●</span>
-      <span>ABC 20/20</span><span class="dot">●</span>
-      <span>Lifetime</span><span class="dot">●</span>
-      <span>HGTV</span><span class="dot">●</span>
-      <span>Outside TV</span><span class="dot">●</span>
-      <span>Coca-Cola</span><span class="dot">●</span>
-      <span>NOAA</span><span class="dot">●</span>
-      <span>Pivotal Ventures</span><span class="dot">●</span>
-      <span>StyleBlueprint</span><span class="dot">●</span>
+      <div class="marquee-group">
+        <span>Good Morning America</span><span class="dot" aria-hidden="true">●</span>
+        <span>ABC 20/20</span><span class="dot" aria-hidden="true">●</span>
+        <span>Lifetime</span><span class="dot" aria-hidden="true">●</span>
+        <span>HGTV</span><span class="dot" aria-hidden="true">●</span>
+        <span>Outside TV</span><span class="dot" aria-hidden="true">●</span>
+        <span>Coca-Cola</span><span class="dot" aria-hidden="true">●</span>
+        <span>NOAA</span><span class="dot" aria-hidden="true">●</span>
+        <span>Pivotal Ventures</span><span class="dot" aria-hidden="true">●</span>
+        <span>StyleBlueprint</span><span class="dot" aria-hidden="true">●</span>
+      </div>
+      <div class="marquee-group" aria-hidden="true">
+        <span>Good Morning America</span><span class="dot" aria-hidden="true">●</span>
+        <span>ABC 20/20</span><span class="dot" aria-hidden="true">●</span>
+        <span>Lifetime</span><span class="dot" aria-hidden="true">●</span>
+        <span>HGTV</span><span class="dot" aria-hidden="true">●</span>
+        <span>Outside TV</span><span class="dot" aria-hidden="true">●</span>
+        <span>Coca-Cola</span><span class="dot" aria-hidden="true">●</span>
+        <span>NOAA</span><span class="dot" aria-hidden="true">●</span>
+        <span>Pivotal Ventures</span><span class="dot" aria-hidden="true">●</span>
+        <span>StyleBlueprint</span><span class="dot" aria-hidden="true">●</span>
+      </div>
     </div>
   </div>
+  <button class="marquee-pause" type="button" data-motion-toggle aria-label="Pause animations"><svg class="icon-pause-sm" viewBox="0 0 24 24"><path d="M9 5v14M15 5v14"/></svg><svg class="icon-play-sm" viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></button>
 </section>
 
 <!-- HERO -->
@@ -156,13 +164,14 @@
       </article>
     </div>
     <div class="hero-controls">
-      <button class="hero-arrow" data-dir="-1" aria-label="Previous slide">&#8249;</button>
-      <div class="hero-dots" role="tablist">
-        <button class="hero-dot is-active" data-index="0" aria-label="Slide 1: Production Sound"></button>
-        <button class="hero-dot" data-index="1" aria-label="Slide 2: Sound Design &amp; Field Recording"></button>
-        <button class="hero-dot" data-index="2" aria-label="Slide 3: Audiobooks"></button>
+      <button class="hero-arrow" type="button" data-dir="-1" aria-label="Previous slide"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <div class="hero-dots">
+        <button class="hero-dot is-active" type="button" aria-current="true" data-index="0" aria-label="Slide 1: Production Sound"></button>
+        <button class="hero-dot" type="button" data-index="1" aria-label="Slide 2: Sound Design &amp; Field Recording"></button>
+        <button class="hero-dot" type="button" data-index="2" aria-label="Slide 3: Audiobooks"></button>
       </div>
-      <button class="hero-arrow" data-dir="1" aria-label="Next slide">&#8250;</button>
+      <button class="hero-arrow" type="button" data-dir="1" aria-label="Next slide"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+      <button class="hero-pause" type="button" data-motion-toggle aria-label="Pause animations"><svg class="icon-pause-sm" viewBox="0 0 24 24"><path d="M9 5v14M15 5v14"/></svg><svg class="icon-play-sm" viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></button>
     </div>
   </div>
 </section>
@@ -209,37 +218,37 @@
   </div>
   <div class="field-row">
     <a class="ig-tile" href="https://youtube.com/shorts/SfgPTwZtjlU" target="_blank" rel="noopener">
-      <img class="ig-img" src="img/scout/SfgPTwZtjlU.jpg" alt="wind through the bamboo" loading="lazy" width="405" height="506">
+      <img class="ig-img" src="img/scout/SfgPTwZtjlU.jpg" alt="" loading="lazy" width="405" height="506">
       <span class="ig-play" aria-hidden="true"><svg viewBox="0 0 10 10"><polygon points="3,1.5 8.5,5 3,8.5"/></svg></span>
       <span class="ig-caption"><span class="ig-title">wind through the bamboo</span></span>
     </a>
     <a class="ig-tile" href="https://youtube.com/shorts/Vj1apiY_xVc" target="_blank" rel="noopener">
-      <img class="ig-img" src="img/scout/Vj1apiY_xVc.jpg" alt="in love with the sounds and liveliness of summer" loading="lazy" width="405" height="506">
+      <img class="ig-img" src="img/scout/Vj1apiY_xVc.jpg" alt="" loading="lazy" width="405" height="506">
       <span class="ig-play" aria-hidden="true"><svg viewBox="0 0 10 10"><polygon points="3,1.5 8.5,5 3,8.5"/></svg></span>
       <span class="ig-caption"><span class="ig-title">in love with the sounds and liveliness of summer</span></span>
     </a>
     <a class="ig-tile" href="https://youtube.com/shorts/o15S46kv6pw" target="_blank" rel="noopener">
-      <img class="ig-img" src="img/scout/o15S46kv6pw.jpg" alt="Haleakala Backpacking and Recording" loading="lazy" width="405" height="506">
+      <img class="ig-img" src="img/scout/o15S46kv6pw.jpg" alt="" loading="lazy" width="405" height="506">
       <span class="ig-play" aria-hidden="true"><svg viewBox="0 0 10 10"><polygon points="3,1.5 8.5,5 3,8.5"/></svg></span>
       <span class="ig-caption"><span class="ig-title">Haleakala Backpacking and Recording</span></span>
     </a>
     <a class="ig-tile" href="https://youtube.com/shorts/IsF0hgpNGHE" target="_blank" rel="noopener">
-      <img class="ig-img" src="img/scout/IsF0hgpNGHE.jpg" alt="Nighttime on the Interstate" loading="lazy" width="405" height="506">
+      <img class="ig-img" src="img/scout/IsF0hgpNGHE.jpg" alt="" loading="lazy" width="405" height="506">
       <span class="ig-play" aria-hidden="true"><svg viewBox="0 0 10 10"><polygon points="3,1.5 8.5,5 3,8.5"/></svg></span>
       <span class="ig-caption"><span class="ig-title">Nighttime on the Interstate</span></span>
     </a>
     <a class="ig-tile" href="https://youtube.com/shorts/_kPW7LiaGSY" target="_blank" rel="noopener">
-      <img class="ig-img" src="img/scout/_kPW7LiaGSY.jpg" alt="summer tanager" loading="lazy" width="405" height="506">
+      <img class="ig-img" src="img/scout/_kPW7LiaGSY.jpg" alt="" loading="lazy" width="405" height="506">
       <span class="ig-play" aria-hidden="true"><svg viewBox="0 0 10 10"><polygon points="3,1.5 8.5,5 3,8.5"/></svg></span>
       <span class="ig-caption"><span class="ig-title">summer tanager</span></span>
     </a>
     <a class="ig-tile" href="https://youtube.com/shorts/Dkj8dXExm6c" target="_blank" rel="noopener">
-      <img class="ig-img" src="img/scout/Dkj8dXExm6c.jpg" alt="goldenrod in Connecticut" loading="lazy" width="405" height="506">
+      <img class="ig-img" src="img/scout/Dkj8dXExm6c.jpg" alt="" loading="lazy" width="405" height="506">
       <span class="ig-play" aria-hidden="true"><svg viewBox="0 0 10 10"><polygon points="3,1.5 8.5,5 3,8.5"/></svg></span>
       <span class="ig-caption"><span class="ig-title">goldenrod in Connecticut</span></span>
     </a>
     <a class="ig-tile" href="https://youtube.com/shorts/Xej_dlHcy8c" target="_blank" rel="noopener">
-      <img class="ig-img" src="img/scout/Xej_dlHcy8c.jpg" alt="barred owl at dusk" loading="lazy" width="405" height="506">
+      <img class="ig-img" src="img/scout/Xej_dlHcy8c.jpg" alt="" loading="lazy" width="405" height="506">
       <span class="ig-play" aria-hidden="true"><svg viewBox="0 0 10 10"><polygon points="3,1.5 8.5,5 3,8.5"/></svg></span>
       <span class="ig-caption"><span class="ig-title">barred owl at dusk</span></span>
     </a>
@@ -288,11 +297,11 @@
 <section id="about">
   <h2>Hi, I'm <em>Brynn.</em></h2>
   <div class="about-grid">
-  <!-- Drop a portrait at img/brynn-portrait.jpg and it takes over this slot;
-       until then the monogram stands in. -->
+  <!-- Portrait slot: the monogram stands in until a photo exists. To add one,
+       save it as img/brynn-portrait.jpg and uncomment the img line below. -->
   <figure class="about-portrait fade-up">
     <span class="monogram">BY</span>
-    <img src="img/brynn-portrait.jpg" alt="Brynn Yonker on set" loading="lazy">
+    <!-- <img src="img/brynn-portrait.jpg" alt="Brynn Yonker on set" loading="lazy" width="640" height="800"> -->
     <figcaption>Nashville, TN</figcaption>
   </figure>
   <div class="about-inner fade-up">
@@ -316,6 +325,8 @@
 </section>
 
 <!-- FOOTER -->
+</main>
+
 <footer>
   <div class="footer-logo"><span class="wave"><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="logo-text"><span class="logo-name">Brynn <span class="logo-surname">Yonker</span></span><span class="logo-role">Audio Engineering</span></span></div>
   <div class="footer-links">
@@ -328,6 +339,6 @@
   <div class="footer-copy">&copy; 2025 Brynn Yonker. All rights reserved.</div>
 </footer>
 
-<script src="js/main.js?v=29dfe6dd"></script>
+<script src="js/main.js?v=0c646fa4"></script>
 </body>
 </html>

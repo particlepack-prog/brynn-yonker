@@ -24,9 +24,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css?v=29dfe6dd">
+<link rel="stylesheet" href="../css/style.css?v=0c646fa4">
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <!-- NAV -->
 <nav aria-label="Main">
@@ -60,6 +61,8 @@
   </ul>
 </nav>
 
+<main id="main" tabindex="-1">
+
 <!-- BREADCRUMB -->
 <div class="breadcrumb">
   <a href="../index.html">Home</a><span class="sep">/</span><span>Work</span><span class="sep">/</span><span class="current">Audiobooks</span>
@@ -79,12 +82,15 @@
 </section>
 
 <section id="portfolio">
+  <!-- Covers: save each image at the path in its card's commented-out img line
+       (img/audiobooks/...) and uncomment that line. Until then the typographic
+       cover shows. -->
   <div class="audiobook-grid">
     <a class="audiobook-card" href="https://www.audible.com/pd/Run-with-the-Wind-Audiobook/B0CSLQTCFL" target="_blank">
       <div class="ab-cover">
         <span class="ab-cover-mark"><svg viewBox="0 0 24 24"><path d="M9 19V6l12-3v13M9 19c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm12 0c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2z"/></svg> Audiobook</span>
         <span class="ab-cover-title">Run with the Wind</span>
-        <img src="../img/audiobooks/run-with-the-wind.jpg" alt="Run with the Wind cover" loading="lazy">
+        <!-- <img src="../img/audiobooks/run-with-the-wind.jpg" alt="" loading="lazy"> -->
       </div>
       <div class="ab-text">
         <div class="ab-title">Run with the Wind</div>
@@ -95,7 +101,7 @@
       <div class="ab-cover">
         <span class="ab-cover-mark"><svg viewBox="0 0 24 24"><path d="M9 19V6l12-3v13M9 19c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm12 0c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2z"/></svg> Audiobook</span>
         <span class="ab-cover-title">Sisters in Science</span>
-        <img src="../img/audiobooks/sisters-in-science.jpg" alt="Sisters in Science cover" loading="lazy">
+        <!-- <img src="../img/audiobooks/sisters-in-science.jpg" alt="" loading="lazy"> -->
       </div>
       <div class="ab-text">
         <div class="ab-title">Sisters in Science</div>
@@ -106,7 +112,7 @@
       <div class="ab-cover">
         <span class="ab-cover-mark"><svg viewBox="0 0 24 24"><path d="M9 19V6l12-3v13M9 19c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm12 0c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2z"/></svg> Audiobook</span>
         <span class="ab-cover-title">X-Men: Soul Killer</span>
-        <img src="../img/audiobooks/x-men-soul-killer.jpg" alt="X-Men: Soul Killer cover" loading="lazy">
+        <!-- <img src="../img/audiobooks/x-men-soul-killer.jpg" alt="" loading="lazy"> -->
       </div>
       <div class="ab-text">
         <div class="ab-title">X-Men: Soul Killer</div>
@@ -117,7 +123,7 @@
       <div class="ab-cover">
         <span class="ab-cover-mark"><svg viewBox="0 0 24 24"><path d="M9 19V6l12-3v13M9 19c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm12 0c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2z"/></svg> Audiobook</span>
         <span class="ab-cover-title">The Good Allies</span>
-        <img src="../img/audiobooks/the-good-allies.jpg" alt="The Good Allies cover" loading="lazy">
+        <!-- <img src="../img/audiobooks/the-good-allies.jpg" alt="" loading="lazy"> -->
       </div>
       <div class="ab-text">
         <div class="ab-title">The Good Allies</div>
@@ -128,7 +134,7 @@
       <div class="ab-cover">
         <span class="ab-cover-mark"><svg viewBox="0 0 24 24"><path d="M9 19V6l12-3v13M9 19c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm12 0c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2z"/></svg> Audiobook</span>
         <span class="ab-cover-title">Sandy Hook</span>
-        <img src="../img/audiobooks/sandy-hook.jpg" alt="Sandy Hook cover" loading="lazy">
+        <!-- <img src="../img/audiobooks/sandy-hook.jpg" alt="" loading="lazy"> -->
       </div>
       <div class="ab-text">
         <div class="ab-title">Sandy Hook</div>
@@ -139,7 +145,7 @@
       <div class="ab-cover">
         <span class="ab-cover-mark"><svg viewBox="0 0 24 24"><path d="M9 19V6l12-3v13M9 19c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm12 0c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2z"/></svg> Audiobook</span>
         <span class="ab-cover-title">Superfan</span>
-        <img src="../img/audiobooks/superfan.jpg" alt="Superfan cover" loading="lazy">
+        <!-- <img src="../img/audiobooks/superfan.jpg" alt="" loading="lazy"> -->
       </div>
       <div class="ab-text">
         <div class="ab-title">Superfan</div>
@@ -150,6 +156,8 @@
 </section>
 
 <!-- FOOTER -->
+</main>
+
 <footer>
   <div class="footer-logo"><span class="wave"><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="logo-text"><span class="logo-name">Brynn <span class="logo-surname">Yonker</span></span><span class="logo-role">Audio Engineering</span></span></div>
   <div class="footer-links">
@@ -162,6 +170,6 @@
   <div class="footer-copy">&copy; 2025 Brynn Yonker. All rights reserved.</div>
 </footer>
 
-<script src="../js/main.js?v=29dfe6dd"></script>
+<script src="../js/main.js?v=0c646fa4"></script>
 </body>
 </html>
