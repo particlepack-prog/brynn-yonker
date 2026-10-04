@@ -851,3 +851,29 @@ section.cta-band{background:var(--brown)}
 /* Covers sit centred in the space beside the intro: the gap after the text
    equals the page margin, so the empty space on either side matches. */
 @media(min-width:1001px){.ab-hero{column-gap:4rem}.ab-hero-feature{justify-self:center}}
+/* ═══ HOME: AUDIOBOOKS SLIDE COVERS ═══ */
+.hero-covers{display:flex;align-items:center;justify-content:center;gap:0;padding:2rem 1.5rem}
+.hero-covers img{width:min(44%,230px);height:auto;aspect-ratio:1;object-fit:cover;border-radius:12px;box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.hero-covers img:first-child{transform:rotate(-5deg) translateX(10%);z-index:1}
+.hero-covers img:last-child{transform:rotate(4deg) translateX(-8%) translateY(6%)}
+@media(max-width:900px){.hero-covers{min-height:210px;padding:1.5rem 1rem}.hero-covers img{width:min(40%,170px)}}
+
+/* ═══ HOME: MARVEL BAND ═══ */
+.marvel-band{background:var(--brown);color:#fff;overflow:hidden}
+.marvel-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:3rem 4rem;align-items:center}
+.marvel-copy h2{color:#fff;margin-bottom:1rem}
+.marvel-copy h2 em{color:var(--orange2)}
+.marvel-copy p{font-size:1rem;line-height:1.8;color:rgba(255,255,255,.78);max-width:52ch;margin-bottom:1.6rem}
+.marvel-copy p strong{color:#fff}
+.marvel-band .btn-primary:hover{background:#fff;color:var(--brown)}
+.marvel-covers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem;max-width:620px;justify-self:end;width:100%}
+.marvel-cover{display:flex;flex-direction:column;gap:.7rem;text-decoration:none;color:#fff}
+.marvel-cover img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:14px;box-shadow:0 22px 50px rgba(0,0,0,.45);transition:transform .35s ease}
+.marvel-cover:hover img{transform:translateY(-5px)}
+.marvel-cap{font-family:var(--serif);font-size:1.05rem;font-weight:700;transition:color .2s}
+.marvel-cover:hover .marvel-cap{color:var(--orange2)}
+@media(max-width:900px){
+  .marvel-inner{grid-template-columns:1fr}
+  .marvel-covers{justify-self:stretch;max-width:none;gap:.9rem}
+  .marvel-cap{font-size:.92rem}
+}
