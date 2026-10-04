@@ -680,3 +680,6 @@ a.post-feature:focus-visible,a.post-card:focus-visible{outline:3px solid var(--o
 .noaa-hero>img{object-position:72% 64%}
 .noaa-hero:hover>img{transform:scale(1.025)}
 @media(max-width:700px){.noaa-hero>img{object-position:72% 30%}}
+/* Video cards are real links now (keyboard reachable), not click handlers. */
+a.video-card{display:block;text-decoration:none;color:inherit}
+a.video-card:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
