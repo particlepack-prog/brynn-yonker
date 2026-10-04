@@ -807,3 +807,5 @@ section.cta-band{background:var(--brown)}
   .scout-hero .noaa-hero::after{display:none}
   .scout-hero .noaa-hero-body{padding:1.4rem 1.4rem 1.6rem}
 }
+/* The intro column is only as wide as its text; the NOAA card takes the rest. */
+@media(min-width:1001px){.scout-hero{grid-template-columns:minmax(0,600px) minmax(0,1fr);gap:3rem}}
