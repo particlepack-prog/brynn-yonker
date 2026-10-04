@@ -669,10 +669,14 @@ a.post-feature:focus-visible,a.post-card:focus-visible{outline:3px solid var(--o
   .noaa-player{justify-self:center;width:min(240px,70vw);padding:0 0 1.75rem}
 }
 /* Real hydrophone frame on Home: keep the hydrophone in view. */
-.hero-slide-img{object-position:center}
-.featured-art img{object-position:center}
+.hero-slide-img{object-position:72% 64%}
+.featured-art img{object-position:72% 64%}
 /* Home strip: seven clips across on desktop; the seventh hides on smaller
    screens so rows stay even. */
 .field-row{grid-template-columns:repeat(7,minmax(0,1fr))}
 @media(max-width:1100px){.field-row{grid-template-columns:repeat(3,minmax(0,1fr))}.field-row>.ig-tile:nth-child(7){display:none}}
 @media(max-width:560px){.field-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* Illustration banner: anchor on the hydrophone, gentle zoom on hover. */
+.noaa-hero>img{object-position:72% 64%}
+.noaa-hero:hover>img{transform:scale(1.025)}
+@media(max-width:700px){.noaa-hero>img{object-position:72% 30%}}
