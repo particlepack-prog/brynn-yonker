@@ -551,3 +551,13 @@ document.querySelectorAll('.yt-lite[data-yt]').forEach(btn => {
     btn.replaceWith(f);
   });
 });
+
+// A link to a collapsible panel (e.g. services.html#acx-spec) opens it.
+(function openTargetedDetails() {
+  const open = () => {
+    const el = location.hash && document.getElementById(location.hash.slice(1));
+    if (el && el.tagName === 'DETAILS') { el.open = true; el.scrollIntoView({ block: 'center' }); }
+  };
+  open();
+  window.addEventListener('hashchange', open);
+})();
