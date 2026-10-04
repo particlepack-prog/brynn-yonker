@@ -846,3 +846,5 @@ section.cta-band{background:var(--brown)}
 @media(min-width:1600px){.ab-hero-feature{width:min(100%,900px);gap:1.75rem}}
 @media(max-width:560px){.ab-hero-feature{gap:.75rem}.ab-feature-title{font-size:.92rem}.ab-feature-by{font-size:.74rem}}
 @media(min-width:1001px) and (max-width:1400px){.ab-hero{grid-template-columns:minmax(0,570px) minmax(0,1fr);gap:2.5rem}.ab-hero-feature{width:100%;gap:1.1rem}}
+/* Featured covers fill the space beside the intro on wide screens. */
+@media(min-width:1401px){.ab-hero{gap:3rem 3.5rem}.ab-hero-feature{width:100%;max-width:1120px;gap:2rem}}
