@@ -951,3 +951,29 @@ section.cta-band{background:var(--brown)}
 /* trims slivers of on-screen graphics at the frame edges */
 .svc-media--crop{border-radius:16px;overflow:hidden;box-shadow:0 16px 38px color-mix(in srgb,var(--brown) 16%,transparent)}
 .svc-media--crop img{transform:scale(1.07);box-shadow:none;border-radius:0}
+/* Services, scaled down: smaller images, tighter rows, body-size text. */
+.svc-page{padding-top:2rem}
+.svc-row{grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:2rem 3.5rem;padding:2rem 0}
+.svc-row:nth-child(even){grid-template-columns:minmax(0,1fr) minmax(0,420px)}
+.svc-media img{aspect-ratio:16/10;border-radius:12px;box-shadow:0 10px 24px color-mix(in srgb,var(--brown) 14%,transparent)}
+.svc-media--crop{border-radius:12px;box-shadow:0 10px 24px color-mix(in srgb,var(--brown) 14%,transparent)}
+.svc-covers{max-width:260px;gap:.6rem}
+.svc-covers img{aspect-ratio:1;border-radius:8px;box-shadow:0 6px 16px color-mix(in srgb,var(--brown) 18%,transparent)}
+.svc-text h2{font-size:clamp(1.3rem,1.8vw,1.6rem);margin-bottom:.5rem}
+.svc-line{font-size:.95rem;line-height:1.6;margin-bottom:.85rem;max-width:52ch}
+.svc-points{gap:.35rem;margin-bottom:.9rem}
+.svc-points li{font-size:.88rem;padding-left:1.15rem}
+.svc-points li::before{width:6px;height:6px;top:.55em}
+.svc-link{font-size:.86rem;min-height:40px}
+.svc-spec-panel{margin:-.25rem 0 .75rem}
+.svc-spec-panel summary{font-size:.84rem;min-height:40px}
+@media(max-width:900px){
+  .svc-row,.svc-row:nth-child(even){grid-template-columns:1fr;gap:1rem;padding:1.75rem 0}
+  .svc-media{max-width:460px}
+  .svc-covers{max-width:220px}
+}
+/* Services art: brand line drawings on a soft panel, in place of photos. */
+.svc-art{aspect-ratio:16/10;border-radius:12px;background:var(--green3);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.svc-row:nth-child(odd) .svc-art{background:color-mix(in srgb,var(--orange) 9%,var(--cream))}
+.svc-art svg{width:86%;height:auto;fill:none;stroke:var(--brown);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.svc-art svg .acc{stroke:var(--orange)}
