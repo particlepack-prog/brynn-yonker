@@ -848,3 +848,6 @@ section.cta-band{background:var(--brown)}
 @media(min-width:1001px) and (max-width:1400px){.ab-hero{grid-template-columns:minmax(0,570px) minmax(0,1fr);gap:2.5rem}.ab-hero-feature{width:100%;gap:1.1rem}}
 /* Featured covers fill the space beside the intro on wide screens. */
 @media(min-width:1401px){.ab-hero{gap:3rem 3.5rem}.ab-hero-feature{width:100%;max-width:1120px;gap:2rem}}
+/* Covers sit centred in the space beside the intro: the gap after the text
+   equals the page margin, so the empty space on either side matches. */
+@media(min-width:1001px){.ab-hero{column-gap:4rem}.ab-hero-feature{justify-self:center}}
