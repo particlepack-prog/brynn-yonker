@@ -772,3 +772,7 @@ section.cta-band{background:var(--brown)}
   .prod-grid .video-title{font-size:.82rem}
   .prod-grid .video-meta{display:block;font-size:.72rem}
 }
+/* Sound Scout: the intro lives in the page header, with a quiet follow line. */
+.work-hero .scout-follow{margin-top:.9rem;font-size:.88rem;font-weight:600;color:var(--muted)}
+.scout-follow a{display:inline-block;padding:.65rem 0;margin:-.65rem 0;color:var(--orange);font-weight:700;text-decoration:none}
+.scout-follow a:hover{text-decoration:underline;text-underline-offset:.2em}
