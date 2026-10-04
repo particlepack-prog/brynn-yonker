@@ -617,3 +617,14 @@ a.post-feature:focus-visible,a.post-card:focus-visible{outline:3px solid var(--o
   .featured-art{order:-1;min-height:150px}
   .featured-art img{-webkit-mask-image:linear-gradient(0deg,transparent 0%,#000 35%);mask-image:linear-gradient(0deg,transparent 0%,#000 35%)}
 }
+
+/* Hero: the roles line is the headline now, set large. */
+.hero-head h1.hero-roles{font-family:var(--sans);font-size:clamp(1.35rem,2.3vw,2rem);font-weight:700;line-height:1.4;color:var(--brown);letter-spacing:-.005em;margin:0}
+.hero-roles .role{white-space:nowrap}
+.hero-roles .role-sep{color:var(--orange);padding:0 .1em}
+@media(max-width:560px){
+  /* Too narrow to keep the longest role on one line: stack the roles instead. */
+  .hero-roles .role{display:block;white-space:normal}
+  .hero-roles .role-sep{display:none}
+}
+@media(max-width:560px){.hero-head h1.hero-roles{font-size:1.12rem;line-height:1.55}}
