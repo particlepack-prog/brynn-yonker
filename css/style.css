@@ -709,7 +709,7 @@ a.video-card:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
   .hero-controls{gap:.25rem}
 }
 /* On dark panels the accent switches to the light orange so emphasis stays readable. */
-#contact.cta-band h2 em,.noaa-hero-body h2 em,.ig-feature h2 em,.hero-slide-copy h2 em{color:var(--orange2)}
+.cta-band h2 em,.noaa-hero-body h2 em,.ig-feature h2 em,.hero-slide-copy h2 em{color:var(--orange2)}
 /* Production Sound: column counts that divide the 18 cards evenly, so every
    row is full (6 x 3 on desktop, 3 x 6 on tablets, 2 x 9 on phones). */
 .prod-grid{grid-template-columns:repeat(6,minmax(0,1fr))}
@@ -724,3 +724,51 @@ a.video-card:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
 @media(max-width:700px){.prod-grid .video-play{width:30px;height:30px;top:.5rem;right:.5rem}}
 /* Deeper shade under card titles: some thumbnails carry their own big lettering. */
 .video-overlay{background:linear-gradient(to top,color-mix(in srgb,var(--brown) 94%,transparent) 0%,color-mix(in srgb,var(--brown) 70%,transparent) 38%,transparent 72%)}
+
+/* ═══ CTA BAND ON EVERY PAGE ═══ */
+section.cta-band{background:var(--brown)}
+
+/* Phone menu: the Contact pill keeps its own padding instead of the plain-link reset. */
+@media(max-width:900px){
+  .nav-links>li>a.nav-cta{width:auto;padding:.7rem 1.5rem;margin-top:.6rem;justify-content:center}
+}
+
+/* ═══ CONTACT: EMAIL FIRST ═══ */
+.email-primary{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1rem;padding:1.25rem 1.35rem;margin-bottom:1.75rem;background:#fff;border:1.5px solid var(--cream2);border-radius:14px}
+.email-primary-label{flex-basis:100%;font-size:.74rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.email-primary-addr{font-family:var(--serif);font-size:clamp(1.15rem,2vw,1.4rem);font-weight:700;color:var(--brown);text-decoration:none;word-break:break-all}
+.email-primary-addr:hover{color:var(--orange)}
+.copy-btn{display:inline-flex;align-items:center;gap:.45rem;min-height:44px;padding:.55rem 1rem;font-family:var(--sans);font-size:.8rem;font-weight:700;color:var(--brown);background:var(--cream);border:1.5px solid var(--cream2);border-radius:50px;cursor:pointer;transition:border-color .2s,color .2s}
+.copy-btn:hover{border-color:var(--orange);color:var(--orange)}
+.copy-btn svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2}
+.copy-status{font-size:.8rem;font-weight:700;color:var(--green)}
+.copy-status:empty{display:none}
+.form-note{font-size:.86rem;color:var(--muted);line-height:1.6;margin-bottom:.25rem}
+.req{color:var(--orange);font-weight:700}
+.form-field input::placeholder,.form-field textarea::placeholder{color:var(--muted);opacity:1}
+/* The select lost its native arrow to appearance:none; draw one back. */
+.form-field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%232f3a31' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.6rem;cursor:pointer}
+
+/* ═══ PRODUCTION GRID: TITLES UNDER THE PICTURE ═══
+   Titles sit below each thumbnail, so they never fight lettering in the image
+   and stay readable at any card width. Rows stay full: 6 x 3 on wide screens,
+   3 x 6 on laptops and tablets, 2 x 9 on phones. */
+.prod-grid{gap:1.75rem 1.25rem}
+.prod-grid .video-card{aspect-ratio:auto;overflow:visible;background:none;border-radius:0;display:flex;flex-direction:column}
+.prod-grid .video-card::after{display:none}
+.prod-grid .video-card:hover{transform:none;box-shadow:none}
+.prod-grid .video-thumb{aspect-ratio:16/9;height:auto;border-radius:12px;background:var(--brown)}
+.prod-grid .video-card:hover .video-thumb{transform:none;box-shadow:0 10px 26px color-mix(in srgb,var(--brown) 18%,transparent)}
+.prod-grid .video-thumb{transition:box-shadow .3s}
+.prod-grid .video-overlay{position:static;background:none;padding:.7rem .1rem 0;display:block}
+.prod-grid .video-title{color:var(--brown);font-size:.9rem;font-weight:700;line-height:1.35;transition:color .2s}
+.prod-grid .video-card:hover .video-title{color:var(--orange)}
+.prod-grid .video-meta{color:var(--muted);font-size:.78rem;margin-top:.2rem;display:block}
+.prod-grid .video-play{top:.6rem;right:.6rem}
+.prod-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(min-width:1600px){.prod-grid{grid-template-columns:repeat(6,minmax(0,1fr))}}
+@media(max-width:700px){
+  .prod-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem .75rem}
+  .prod-grid .video-title{font-size:.82rem}
+  .prod-grid .video-meta{display:block;font-size:.72rem}
+}

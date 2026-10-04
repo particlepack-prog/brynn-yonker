@@ -91,17 +91,25 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.08 });
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-// Contact form (mailto handoff)
+// Contact form (mailto handoff). The page says plainly that the form opens the
+// visitor's email app; the address and a copy button sit above it for anyone
+// whose email lives in a browser tab.
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
+  // "Get in touch" bands on the work pages pass the service along: ?project=Sound%20Design
+  const wanted = new URLSearchParams(location.search).get('project');
+  const select = contactForm.querySelector('#project');
+  if (wanted && select && Array.from(select.options).some(o => o.text === wanted)) select.value = wanted;
+
   contactForm.addEventListener('submit', e => {
     e.preventDefault();
     const d = new FormData(e.target);
+    const line = (label, key) => (d.get(key) || '').trim() ? '\n' + label + ': ' + d.get(key).trim() : '';
     const subject = encodeURIComponent('Website Inquiry: ' + (d.get('project') || 'General'));
     const body = encodeURIComponent(
-      'Name: ' + d.get('fname') + ' ' + d.get('lname') +
+      'Name: ' + [d.get('fname'), d.get('lname')].join(' ').trim() +
       '\nEmail: ' + d.get('email') +
-      '\nProject: ' + d.get('project') +
+      line('Project', 'project') + line('Dates', 'dates') + line('Location', 'location') +
       '\n\n' + d.get('message')
     );
     window.location.href = 'mailto:brynn.yonker@gmail.com?subject=' + subject + '&body=' + body;
@@ -109,6 +117,26 @@ if (contactForm) {
     if (msg) msg.style.display = 'block';
   });
 }
+
+// Copy-to-clipboard for the email address.
+document.querySelectorAll('.copy-btn[data-copy]').forEach(btn => {
+  const status = btn.parentElement.querySelector('.copy-status');
+  btn.addEventListener('click', async () => {
+    const text = btn.dataset.copy;
+    let ok = false;
+    try { await navigator.clipboard.writeText(text); ok = true; } catch (e) {
+      // Older browsers and some embedded views: fall back to a hidden textarea.
+      const t = document.createElement('textarea');
+      t.value = text; t.setAttribute('readonly', ''); t.style.position = 'fixed'; t.style.opacity = '0';
+      document.body.appendChild(t); t.select();
+      try { ok = document.execCommand('copy'); } catch (e2) {}
+      t.remove();
+    }
+    if (status) status.textContent = ok ? 'Copied' : 'Select the address above to copy it';
+    clearTimeout(btn._t);
+    btn._t = setTimeout(() => { if (status) status.textContent = ''; }, 2500);
+  });
+});
 
 // Thumbnail fallback. If a thumbnail can't load (offline, 404, or a sandboxed
 // preview that blocks third-party images), swap in a waveform placeholder
@@ -166,7 +194,7 @@ if (contactForm) {
 })();
 
 // A/B audio player. Both tracks play together and the toggle only changes which
-// one is audible, so switching never loses your place — that side-by-side is the
+// one is audible, so switching never loses your place. That side-by-side is the
 // whole point of a before/after.
 (function abPlayer() {
   const root = document.getElementById('abPlayer');
@@ -277,7 +305,7 @@ if (contactForm) {
       playBtn.setAttribute('aria-label', 'Pause comparison');
       if (!raf) tick();
     }).catch(() => {
-      // Autoplay policy or a missing file — leave the UI in its resting state.
+      // Autoplay policy or a missing file: leave the UI in its resting state.
       root.classList.remove('is-playing');
     });
   }

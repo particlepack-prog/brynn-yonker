@@ -1,4 +1,4 @@
-DROP REAL IMAGES HERE — no code changes needed.
+DROP REAL IMAGES HERE. No code changes needed.
 
 The HTML already points at these exact paths. Add a file and it appears;
 leave it missing and a designed placeholder shows instead.
