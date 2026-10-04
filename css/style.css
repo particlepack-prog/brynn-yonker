@@ -641,3 +641,7 @@ a.post-feature:focus-visible,a.post-card:focus-visible{outline:3px solid var(--o
   #trusted .trusted-label{padding-left:0;text-align:center}
   #trusted .marquee-track span:not(.dot){padding:0 1.2rem}
 }
+
+/* Headline back on top: roles line steps down to a supporting size. */
+.hero-head .hero-roles{font-family:var(--sans);font-size:clamp(1.1rem,1.6vw,1.45rem);font-weight:700;line-height:1.45;color:var(--brown2);margin:0}
+@media(max-width:560px){.hero-head .hero-roles{font-size:1.02rem}}
