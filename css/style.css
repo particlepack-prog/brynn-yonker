@@ -781,3 +781,29 @@ section.cta-band{background:var(--brown)}
 .intro-location--lg svg{width:clamp(20px,1.6vw,24px);height:auto;flex-shrink:0;color:var(--orange)}
 .intro-location--lg em{font-family:var(--serif);font-style:italic;font-weight:700;font-size:1.45em;color:var(--orange);letter-spacing:0}
 .hero-head-right{padding-bottom:0}
+/* ═══ SOUND SCOUT HEADER: intro + NOAA card side by side ═══ */
+.scout-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:2.5rem 3.5rem;align-items:stretch}
+.scout-hero-copy{min-width:0}
+.scout-hero-copy p{max-width:560px}
+.scout-hero .noaa-hero{min-height:100%;margin:0;align-self:stretch}
+.scout-hero .noaa-hero::after{background:linear-gradient(90deg,rgba(6,22,28,.95) 0%,rgba(6,22,28,.78) 34%,rgba(6,22,28,0) 64%)}
+.scout-hero .noaa-hero-body{max-width:min(380px,58%);padding:clamp(1.5rem,2.6vw,2.5rem)}
+.scout-hero .noaa-hero-body h2{font-size:clamp(1.45rem,2.1vw,2rem)}
+.scout-hero .noaa-hero-body p{font-size:.9rem}
+@media(max-width:1000px){
+  .scout-hero{grid-template-columns:1fr}
+  .scout-hero .noaa-hero{min-height:360px}
+}
+@media(max-width:700px){
+  .scout-hero .noaa-hero{min-height:420px}
+  .scout-hero .noaa-hero-body{max-width:none}
+  .scout-hero .noaa-hero::after{background:linear-gradient(to top,rgba(6,22,28,.95) 0%,rgba(6,22,28,.6) 50%,rgba(6,22,28,0) 80%)}
+}
+@media(min-width:1001px) and (max-width:1400px){.scout-hero{grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);gap:2.5rem}}
+/* Phones: art as a strip on top of the card, copy below it, so nothing covers the hydrophone. */
+@media(max-width:700px){
+  .scout-hero .noaa-hero{display:flex;flex-direction:column;align-items:stretch;min-height:0;box-shadow:none}
+  .scout-hero .noaa-hero>img{position:relative;inset:auto;height:190px;object-position:72% 62%}
+  .scout-hero .noaa-hero::after{display:none}
+  .scout-hero .noaa-hero-body{padding:1.4rem 1.4rem 1.6rem}
+}
