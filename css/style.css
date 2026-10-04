@@ -977,3 +977,16 @@ section.cta-band{background:var(--brown)}
 .svc-row:nth-child(odd) .svc-art{background:color-mix(in srgb,var(--orange) 9%,var(--cream))}
 .svc-art svg{width:86%;height:auto;fill:none;stroke:var(--brown);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
 .svc-art svg .acc{stroke:var(--orange)}
+/* ═══ SERVICES: staggered, numbered rows ═══ */
+.svc-row{align-items:start;padding:3.5rem 0;gap:2rem 5rem}
+.svc-row+.svc-row{border-top:none}
+.svc-text{padding-top:3rem}
+.svc-num{display:block;font-family:var(--sans);font-weight:300;font-size:clamp(2.6rem,4.2vw,3.6rem);line-height:1;letter-spacing:-.02em;color:var(--orange);margin-bottom:.6rem}
+.svc-row:nth-child(odd) .svc-media{margin-top:0}
+.svc-row:nth-child(even) .svc-media{margin-top:-1.5rem}
+@media(max-width:900px){
+  .svc-row{padding:2rem 0;gap:1rem}
+  .svc-text{padding-top:0}
+  .svc-row:nth-child(even) .svc-media{margin-top:0}
+  .svc-num{font-size:2.2rem;margin-bottom:.35rem}
+}
