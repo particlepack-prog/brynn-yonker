@@ -819,3 +819,21 @@ section.cta-band{background:var(--brown)}
   .ab-title{font-size:.8rem}
   .ab-label{font-size:.72rem}
 }
+/* ═══ AUDIOBOOKS HEADER: intro + two featured covers ═══ */
+.ab-hero{display:grid;grid-template-columns:minmax(0,1fr);gap:2.25rem}
+.ab-hero-copy{min-width:0}
+.ab-hero-feature{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem;align-items:start}
+.ab-feature-card{display:flex;flex-direction:column;gap:.75rem;text-decoration:none;color:var(--brown)}
+.ab-feature-card img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:14px;box-shadow:0 14px 34px color-mix(in srgb,var(--brown) 22%,transparent);transition:transform .35s ease,box-shadow .35s ease}
+.ab-feature-card:hover img{transform:translateY(-4px);box-shadow:0 20px 44px color-mix(in srgb,var(--brown) 28%,transparent)}
+.ab-feature-text{display:flex;flex-direction:column;gap:.15rem}
+.ab-feature-title{font-family:var(--serif);font-size:clamp(1.05rem,1.4vw,1.3rem);font-weight:700;line-height:1.25;transition:color .2s}
+.ab-feature-card:hover .ab-feature-title{color:var(--orange)}
+.ab-feature-by{font-size:.84rem;font-weight:600;color:var(--muted)}
+@media(min-width:1001px){
+  .ab-hero{grid-template-columns:minmax(0,600px) minmax(0,1fr);gap:3rem 4rem;align-items:center}
+  .ab-hero-feature{justify-self:end;width:min(100%,640px)}
+  /* a slight stagger so the pair reads as a display, not a row of tiles */
+  .ab-feature-card:nth-child(2){margin-top:2.5rem}
+}
+@media(min-width:1600px){.ab-hero-feature{width:min(100%,780px);gap:1.75rem}}
